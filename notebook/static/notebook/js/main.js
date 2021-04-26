@@ -140,10 +140,10 @@ requirejs([
         config: config_section},
         common_options));
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
-    // var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
-    //     notebook: notebook,
-    //     events: events,
-    //     actions: acts});
+    var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
+        notebook: notebook,
+        events: events,
+        actions: acts});
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
@@ -199,7 +199,7 @@ requirejs([
     IPython.quick_help = quick_help;
     IPython.login_widget = login_widget;
     IPython.menubar = menubar;
-    // IPython.toolbar = toolbar;
+    IPython.toolbar = toolbar;
     IPython.notification_area = notification_area;
     IPython.keyboard_manager = keyboard_manager;
     IPython.save_widget = save_widget;
