@@ -140,25 +140,25 @@ requirejs([
         config: config_section},
         common_options));
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
-    var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
-        notebook: notebook,
-        events: events,
-        actions: acts});
+    // var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
+    //     notebook: notebook,
+    //     events: events,
+    //     actions: acts});
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
         notebook: notebook});
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
-    // var menubar = new menubar.MenuBar('#menubar', $.extend({
-    //     notebook: notebook,
-    //     contents: contents,
-    //     events: events,
-    //     save_widget: save_widget,
-    //     quick_help: quick_help,
-    //     actions: acts,
-    //     config: config_section},
-    //     common_options));
+    var menubar = new menubar.MenuBar('#menubar', $.extend({
+        notebook: notebook,
+        contents: contents,
+        events: events,
+        save_widget: save_widget,
+        quick_help: quick_help,
+        actions: acts,
+        config: config_section},
+        common_options));
     var notification_area = new notificationarea.NotebookNotificationArea(
         '#notification_area', {
         events: events,
@@ -198,8 +198,8 @@ requirejs([
     IPython.pager = pager;
     IPython.quick_help = quick_help;
     IPython.login_widget = login_widget;
-    // IPython.menubar = menubar;
-    IPython.toolbar = toolbar;
+    IPython.menubar = menubar;
+    // IPython.toolbar = toolbar;
     IPython.notification_area = notification_area;
     IPython.keyboard_manager = keyboard_manager;
     IPython.save_widget = save_widget;
