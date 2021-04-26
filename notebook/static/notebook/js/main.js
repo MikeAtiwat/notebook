@@ -150,15 +150,15 @@ requirejs([
         notebook: notebook});
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
-    var menubar = new menubar.MenuBar('#menubar', $.extend({
-        notebook: notebook,
-        contents: contents,
-        events: events,
-        save_widget: save_widget,
-        quick_help: quick_help,
-        actions: acts,
-        config: config_section},
-        common_options));
+    // var menubar = new menubar.MenuBar('#menubar', $.extend({
+    //     notebook: notebook,
+    //     contents: contents,
+    //     events: events,
+    //     save_widget: save_widget,
+    //     quick_help: quick_help,
+    //     actions: acts,
+    //     config: config_section},
+    //     common_options));
     var notification_area = new notificationarea.NotebookNotificationArea(
         '#notification_area', {
         events: events,
