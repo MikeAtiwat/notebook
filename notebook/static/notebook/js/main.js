@@ -181,7 +181,7 @@ requirejs([
     }
     $('#fonttest').remove();
 
-    // page.show();
+    page.show();
 
     events.one('notebook_loaded.Notebook', function () {
         var hash = document.location.hash;
@@ -198,7 +198,7 @@ requirejs([
     IPython.pager = pager;
     IPython.quick_help = quick_help;
     IPython.login_widget = login_widget;
-    IPython.menubar = menubar;
+    // IPython.menubar = menubar;
     IPython.toolbar = toolbar;
     IPython.notification_area = notification_area;
     IPython.keyboard_manager = keyboard_manager;
