@@ -198,13 +198,13 @@ define([
         
         this.class_config.get('Header').then(function(header) {
             if (header === false) {
-                that.keyboard_manager.actions.call('jupyter-notebook:hide-header');
+                that.keyboard_manager.actions.call('jupyter-notebook:show-header');
             }
         });
         
         this.class_config.get('Toolbar').then(function(toolbar) {
           if (toolbar === false) {
-              that.keyboard_manager.actions.call('jupyter-notebook:hide-toolbar');
+              that.keyboard_manager.actions.call('jupyter-notebook:show-toolbar');
           }
         });
         

@@ -40,7 +40,7 @@ define([
          * The header and site divs start out hidden to prevent FLOUC.
          * Main scripts should call this method after styling everything.
          */
-        // this.show_header();
+        this.show_header();
         this.show_site();
     };
 
