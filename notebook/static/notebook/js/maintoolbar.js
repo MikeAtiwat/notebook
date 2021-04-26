@@ -45,7 +45,7 @@ define([
             'save-notbook'
           ],
           [
-            ['jupyter-notebook:save-notebook'],
+            ['jupyter-notebook:save-notebook', 'jupyter-notebook:insert-cell-below', 'jupyter-notebook:save-notebook'],
             'save-notbook'
           ],
           [
