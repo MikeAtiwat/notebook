@@ -216,10 +216,10 @@ requirejs([
         }
     });
     
-    // // load tab if url hash
-    // if (window.location.hash) {
-    //     $("#tabs").find("a[href='" + window.location.hash + "']").click();
-    // }
+    // load tab if url hash
+    if (window.location.hash) {
+        $("#tabs").find("a[href='" + window.location.hash + "']").click();
+    }
     
     // shutdownbutton.activate();
 });
