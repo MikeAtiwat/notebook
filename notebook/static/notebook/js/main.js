@@ -144,10 +144,10 @@ requirejs([
         notebook: notebook,
         events: events,
         actions: acts});
-    // var quick_help = new quickhelp.QuickHelp({
-    //     keyboard_manager: keyboard_manager,
-    //     events: events,
-    //     notebook: notebook});
+    var quick_help = new quickhelp.QuickHelp({
+        keyboard_manager: keyboard_manager,
+        events: events,
+        notebook: notebook});
     // keyboard_manager.set_notebook(notebook);
     // keyboard_manager.set_quickhelp(quick_help);
     // var menubar = new menubar.MenuBar('#menubar', $.extend({
