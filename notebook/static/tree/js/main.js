@@ -115,24 +115,24 @@ requirejs([
         )
     );
 
-    // var interval_id=0;
-    // // auto refresh every xx secondes, no need to be fast,
-    // //  update is done most of the time when page get focus
-    // IPython.tree_time_refresh = 60; // in sec
+    var interval_id=0;
+    // auto refresh every xx secondes, no need to be fast,
+    //  update is done most of the time when page get focus
+    IPython.tree_time_refresh = 60; // in sec
 
-    // // limit refresh on focus at 1/10sec, otherwise this
-    // // can cause too frequent refresh on switching through windows or tabs.
-    // IPython.min_delta_refresh = 10; // in sec
+    // limit refresh on focus at 1/10sec, otherwise this
+    // can cause too frequent refresh on switching through windows or tabs.
+    IPython.min_delta_refresh = 10; // in sec
 
-    // var _last_refresh = null;
+    var _last_refresh = null;
 
-    // var _refresh_list = function(){
-    //     _last_refresh = new Date();
-    //     session_list.load_sessions();
-    //     if (terminal_list) {
-    //         terminal_list.load_terminals();
-    //     }
-    // };
+    var _refresh_list = function(){
+        _last_refresh = new Date();
+        session_list.load_sessions();
+        if (terminal_list) {
+            terminal_list.load_terminals();
+        }
+    };
 
     // var enable_autorefresh = function(){
     //     /**
