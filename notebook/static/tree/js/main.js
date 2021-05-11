@@ -173,54 +173,54 @@ requirejs([
 
     page.show();
 
-    // // For backwards compatibility.
-    // IPython.page = page;
-    // IPython.notebook_list = notebook_list;
-    // IPython.session_list = session_list;
-    // IPython.kernel_list = kernel_list;
-    // IPython.login_widget = login_widget;
-    // IPython.new_notebook_widget = new_buttons;
+    // For backwards compatibility.
+    IPython.page = page;
+    IPython.notebook_list = notebook_list;
+    IPython.session_list = session_list;
+    IPython.kernel_list = kernel_list;
+    IPython.login_widget = login_widget;
+    IPython.new_notebook_widget = new_buttons;
 
-    // events.trigger('app_initialized.DashboardApp');
+    events.trigger('app_initialized.DashboardApp');
     
-    // // Now actually load nbextensions
-    // utils.load_extensions_from_config(cfg);
-    // utils.load_extensions_from_config(common_config);
+    // Now actually load nbextensions
+    utils.load_extensions_from_config(cfg);
+    utils.load_extensions_from_config(common_config);
     
-    // // bound the upload method to the on change of the file select list
-    // $("#alternate_upload").change(function (event){
-    //     notebook_list.handleFilesUpload(event,'form');
-    // });
+    // bound the upload method to the on change of the file select list
+    $("#alternate_upload").change(function (event){
+        notebook_list.handleFilesUpload(event,'form');
+    });
 
-    // // bound the the span around the input file upload to enable keyboard click
-    // $("#upload_span").keydown(function (event) {
-    //     var key = event.which;
-    //     if ((key === 13) || (key === 32)) {
-    //         event.preventDefault();
-    //         $("#upload_span_input").click();
-    //     }
-    // })
+    // bound the the span around the input file upload to enable keyboard click
+    $("#upload_span").keydown(function (event) {
+        var key = event.which;
+        if ((key === 13) || (key === 32)) {
+            event.preventDefault();
+            $("#upload_span_input").click();
+        }
+    })
     
-    // // set hash on tab click
-    // $("#tabs").find("a").click(function(e) {
-    //     // Prevent the document from jumping when the active tab is changed to a 
-    //     // tab that has a lot of content.
-    //     e.preventDefault();
+    // set hash on tab click
+    $("#tabs").find("a").click(function(e) {
+        // Prevent the document from jumping when the active tab is changed to a 
+        // tab that has a lot of content.
+        e.preventDefault();
 
-    //     // Set the hash without causing the page to jump.
-    //     // https://stackoverflow.com/a/14690177/2824256
-    //     var hash = $(this).attr("href");
-    //     if(window.history.pushState) {
-    //         window.history.pushState(null, null, hash);
-    //     } else {
-    //         window.location.hash = hash;
-    //     }
-    // });
+        // Set the hash without causing the page to jump.
+        // https://stackoverflow.com/a/14690177/2824256
+        var hash = $(this).attr("href");
+        if(window.history.pushState) {
+            window.history.pushState(null, null, hash);
+        } else {
+            window.location.hash = hash;
+        }
+    });
     
-    // // load tab if url hash
-    // if (window.location.hash) {
-    //     $("#tabs").find("a[href='" + window.location.hash + "']").click();
-    // }
+    // load tab if url hash
+    if (window.location.hash) {
+        $("#tabs").find("a[href='" + window.location.hash + "']").click();
+    }
     
-    // shutdownbutton.activate();
+    shutdownbutton.activate();
 });
