@@ -159,13 +159,13 @@ requirejs([
         actions: acts,
         config: config_section},
         common_options));
-    // var notification_area = new notificationarea.NotebookNotificationArea(
-    //     '#notification_area', {
-    //     events: events,
-    //     save_widget: save_widget,
-    //     notebook: notebook,
-    //     keyboard_manager: keyboard_manager});
-    // notification_area.init_notification_widgets();
+    var notification_area = new notificationarea.NotebookNotificationArea(
+        '#notification_area', {
+        events: events,
+        save_widget: save_widget,
+        notebook: notebook,
+        keyboard_manager: keyboard_manager});
+    notification_area.init_notification_widgets();
     // var kernel_selector = new kernelselector.KernelSelector(
     //     '#kernel_logo_widget', notebook);
     // searchandreplace.load(keyboard_manager);
