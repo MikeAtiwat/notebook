@@ -166,9 +166,9 @@ requirejs([
         notebook: notebook,
         keyboard_manager: keyboard_manager});
     notification_area.init_notification_widgets();
-    // var kernel_selector = new kernelselector.KernelSelector(
-    //     '#kernel_logo_widget', notebook);
-    // searchandreplace.load(keyboard_manager);
+    var kernel_selector = new kernelselector.KernelSelector(
+        '#kernel_logo_widget', notebook);
+    searchandreplace.load(keyboard_manager);
 
     // $('body').append('<div id="fonttest"><pre><span id="test1">x</span>'+
     //                  '<span id="test2" style="font-weight: bold;">x</span>'+
