@@ -85,36 +85,36 @@ requirejs([
 
     page = new page.Page('div#header', 'div#site');
 
-    var session_list = new sesssionlist.SesssionList($.extend({
-        events: events},
-        common_options));
-        var contents = new contents_service.Contents({
-            base_url: common_options.base_url,
-            common_config: common_config
-        });
+    // var session_list = new sesssionlist.SesssionList($.extend({
+    //     events: events},
+    //     common_options));
+    //     var contents = new contents_service.Contents({
+    //         base_url: common_options.base_url,
+    //         common_config: common_config
+    //     });
         
-    IPython.NotebookList = notebooklist.NotebookList;
-    var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
-        contents: contents,
-        session_list:  session_list},
-        common_options));
-    var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
-        session_list:  session_list},
-        common_options));
+    // IPython.NotebookList = notebooklist.NotebookList;
+    // var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
+    //     contents: contents,
+    //     session_list:  session_list},
+    //     common_options));
+    // var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
+    //     session_list:  session_list},
+    //     common_options));
     
-    var terminal_list;
-    if (utils.get_body_data("terminalsAvailable") === "True") {
-        terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
-    }
+    // var terminal_list;
+    // if (utils.get_body_data("terminalsAvailable") === "True") {
+    //     terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
+    // }
 
-    var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
+    // var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
 
-    var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
-        $.extend(
-            {contents: contents, events: events},
-            common_options
-        )
-    );
+    // var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
+    //     $.extend(
+    //         {contents: contents, events: events},
+    //         common_options
+    //     )
+    // );
 
     // var interval_id=0;
     // // auto refresh every xx secondes, no need to be fast,
