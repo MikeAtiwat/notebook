@@ -172,15 +172,15 @@ requirejs([
 
     page.show();
 
-    // // For backwards compatibility.
-    // IPython.page = page;
-    // IPython.notebook_list = notebook_list;
-    // IPython.session_list = session_list;
-    // IPython.kernel_list = kernel_list;
-    // IPython.login_widget = login_widget;
-    // IPython.new_notebook_widget = new_buttons;
+    // For backwards compatibility.
+    IPython.page = page;
+    IPython.notebook_list = notebook_list;
+    IPython.session_list = session_list;
+    IPython.kernel_list = kernel_list;
+    IPython.login_widget = login_widget;
+    IPython.new_notebook_widget = new_buttons;
 
-    // events.trigger('app_initialized.DashboardApp');
+    events.trigger('app_initialized.DashboardApp');
     
     // // Now actually load nbextensions
     // utils.load_extensions_from_config(cfg);
