@@ -182,9 +182,9 @@ requirejs([
 
     events.trigger('app_initialized.DashboardApp');
     
-    // // Now actually load nbextensions
-    // utils.load_extensions_from_config(cfg);
-    // utils.load_extensions_from_config(common_config);
+    // Now actually load nbextensions
+    utils.load_extensions_from_config(cfg);
+    utils.load_extensions_from_config(common_config);
     
     // // bound the upload method to the on change of the file select list
     // $("#alternate_upload").change(function (event){
