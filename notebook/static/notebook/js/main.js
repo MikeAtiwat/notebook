@@ -128,10 +128,10 @@ requirejs([
         events: events,
         keyboard_manager: keyboard_manager});
     acts.extend_env({save_widget:save_widget});
-    // var contents = new contents_service.Contents({
-    //       base_url: common_options.base_url,
-    //       common_config: common_config
-    //     });
+    var contents = new contents_service.Contents({
+          base_url: common_options.base_url,
+          common_config: common_config
+        });
     // var notebook = new notebook.Notebook('div#notebook', $.extend({
     //     events: events,
     //     keyboard_manager: keyboard_manager,
