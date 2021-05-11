@@ -152,23 +152,23 @@ requirejs([
         }
     };
 
-    // var disable_autorefresh = function(){
-    //     clearInterval(interval_id);
-    //     interval_id = 0;
-    // };
+    var disable_autorefresh = function(){
+        clearInterval(interval_id);
+        interval_id = 0;
+    };
 
-    // // stop autorefresh when page lose focus
-    // $(window).blur(function() {
-    //     disable_autorefresh();
-    // });
+    // stop autorefresh when page lose focus
+    $(window).blur(function() {
+        disable_autorefresh();
+    });
 
-    // //re-enable when page get focus back
-    // $(window).focus(function() {
-    //     enable_autorefresh();
-    // });
+    //re-enable when page get focus back
+    $(window).focus(function() {
+        enable_autorefresh();
+    });
 
     // // finally start it, it will refresh immediately
-    // enable_autorefresh();
+    enable_autorefresh();
 
     page.show();
 
