@@ -181,7 +181,7 @@ requirejs([
     // }
     // $('#fonttest').remove();
 
-    // page.show();
+    page.show();
 
     // events.one('notebook_loaded.Notebook', function () {
     //     var hash = document.location.hash;
