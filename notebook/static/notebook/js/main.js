@@ -115,15 +115,15 @@ requirejs([
     // Instantiate the main objects
     
     var page = new page.Page('div#header', 'div#site');
-    // var pager = new pager.Pager('div#pager', {
-    //     events: events});
-    // var acts = new actions.init();
-    // var keyboard_manager = new keyboardmanager.KeyboardManager({
-    //     pager: pager,
-    //     events: events,
-    //     actions: acts, 
-    //     config: config_section,
-    // });
+    var pager = new pager.Pager('div#pager', {
+        events: events});
+    var acts = new actions.init();
+    var keyboard_manager = new keyboardmanager.KeyboardManager({
+        pager: pager,
+        events: events,
+        actions: acts, 
+        config: config_section,
+    });
     // var save_widget = new savewidget.SaveWidget('span#save_widget', {
     //     events: events,
     //     keyboard_manager: keyboard_manager});
