@@ -168,18 +168,18 @@ requirejs([
     notification_area.init_notification_widgets();
     var kernel_selector = new kernelselector.KernelSelector(
         '#kernel_logo_widget', notebook);
-    // searchandreplace.load(keyboard_manager);
+    searchandreplace.load(keyboard_manager);
 
-    // $('body').append('<div id="fonttest"><pre><span id="test1">x</span>'+
-    //                  '<span id="test2" style="font-weight: bold;">x</span>'+
-    //                  '<span id="test3" style="font-style: italic;">x</span></pre></div>');
-    // var nh = $('#test1').innerHeight();
-    // var bh = $('#test2').innerHeight();
-    // var ih = $('#test3').innerHeight();
-    // if(nh != bh || nh != ih) {
-    //     $('head').append('<style>.CodeMirror span { vertical-align: bottom; }</style>');
-    // }
-    // $('#fonttest').remove();
+    $('body').append('<div id="fonttest"><pre><span id="test1">x</span>'+
+                     '<span id="test2" style="font-weight: bold;">x</span>'+
+                     '<span id="test3" style="font-style: italic;">x</span></pre></div>');
+    var nh = $('#test1').innerHeight();
+    var bh = $('#test2').innerHeight();
+    var ih = $('#test3').innerHeight();
+    if(nh != bh || nh != ih) {
+        $('head').append('<style>.CodeMirror span { vertical-align: bottom; }</style>');
+    }
+    $('#fonttest').remove();
 
     page.show();
 
