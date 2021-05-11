@@ -186,10 +186,10 @@ requirejs([
     utils.load_extensions_from_config(cfg);
     utils.load_extensions_from_config(common_config);
     
-    // // bound the upload method to the on change of the file select list
-    // $("#alternate_upload").change(function (event){
-    //     notebook_list.handleFilesUpload(event,'form');
-    // });
+    // bound the upload method to the on change of the file select list
+    $("#alternate_upload").change(function (event){
+        notebook_list.handleFilesUpload(event,'form');
+    });
 
     // // bound the the span around the input file upload to enable keyboard click
     // $("#upload_span").keydown(function (event) {
