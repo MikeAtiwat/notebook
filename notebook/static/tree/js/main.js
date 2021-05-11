@@ -134,23 +134,23 @@ requirejs([
         }
     };
 
-    // var enable_autorefresh = function(){
-    //     /**
-    //      *refresh immediately , then start interval
-    //      */
-    //     var now = new Date();
+    var enable_autorefresh = function(){
+        /**
+         *refresh immediately , then start interval
+         */
+        var now = new Date();
 
-    //     if (now - _last_refresh < IPython.min_delta_refresh*1000){
-    //         console.log("Reenabling autorefresh too close to last tree refresh, not refreshing immediately again.");
-    //     } else {
-    //         _refresh_list();
-    //     }
-    //     if (!interval_id){
-    //         interval_id = setInterval(_refresh_list,
-    //                 IPython.tree_time_refresh*1000
-    //         );
-    //     }
-    // };
+        if (now - _last_refresh < IPython.min_delta_refresh*1000){
+            console.log("Reenabling autorefresh too close to last tree refresh, not refreshing immediately again.");
+        } else {
+            _refresh_list();
+        }
+        if (!interval_id){
+            interval_id = setInterval(_refresh_list,
+                    IPython.tree_time_refresh*1000
+            );
+        }
+    };
 
     // var disable_autorefresh = function(){
     //     clearInterval(interval_id);
