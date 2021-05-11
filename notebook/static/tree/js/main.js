@@ -221,5 +221,5 @@ requirejs([
         $("#tabs").find("a[href='" + window.location.hash + "']").click();
     }
     
-    // shutdownbutton.activate();
+    shutdownbutton.activate();
 });
