@@ -220,29 +220,29 @@ requirejs([
       configurable: false
     });
 
-    // clipboard.setup_clipboard_events();
+    clipboard.setup_clipboard_events();
     
-    // // Now actually load nbextensionsload_extensions_from_config
-    // Promise.all([
-    //     utils.load_extensions_from_config(config_section),
-    //     utils.load_extensions_from_config(common_config),
-    // ])
-    // .catch(function(error) {
-    //     console.error('Could not load nbextensions from user config files', error);
-    // })
-    // // BEGIN HARDCODED WIDGETS HACK
-    // .then(function() {
-    //     if (!utils.is_loaded('jupyter-js-widgets/extension')) {
-    //         // Fallback to the ipywidgets extension
-    //         utils.load_extension('widgets/notebook/js/extension').catch(function () {
-    //             console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
-    //         });
-    //     }
-    // })
-    // .catch(function(error) {
-    //     console.error('Could not load ipywidgets', error);
-    // });
-    // // END HARDCODED WIDGETS HACK
+    // Now actually load nbextensionsload_extensions_from_config
+    Promise.all([
+        utils.load_extensions_from_config(config_section),
+        utils.load_extensions_from_config(common_config),
+    ])
+    .catch(function(error) {
+        console.error('Could not load nbextensions from user config files', error);
+    })
+    // BEGIN HARDCODED WIDGETS HACK
+    .then(function() {
+        if (!utils.is_loaded('jupyter-js-widgets/extension')) {
+            // Fallback to the ipywidgets extension
+            utils.load_extension('widgets/notebook/js/extension').catch(function () {
+                console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
+            });
+        }
+    })
+    .catch(function(error) {
+        console.error('Could not load ipywidgets', error);
+    });
+    // END HARDCODED WIDGETS HACK
 
     // notebook.load_notebook(common_options.notebook_path);
 
