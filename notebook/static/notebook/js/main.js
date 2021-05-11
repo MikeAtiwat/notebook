@@ -211,14 +211,14 @@ requirejs([
         console.error("Error in app_initialized callback", e);
     }
 
-    // Object.defineProperty( IPython, 'actions', {
-    //   get: function() {
-    //       console.warn('accessing "actions" on the global IPython/Jupyter is not recommended. Pass it to your objects constructors at creation time');
-    //       return acts;
-    //   },
-    //   enumerable: true,
-    //   configurable: false
-    // });
+    Object.defineProperty( IPython, 'actions', {
+      get: function() {
+          console.warn('accessing "actions" on the global IPython/Jupyter is not recommended. Pass it to your objects constructors at creation time');
+          return acts;
+      },
+      enumerable: true,
+      configurable: false
+    });
 
     // clipboard.setup_clipboard_events();
     
