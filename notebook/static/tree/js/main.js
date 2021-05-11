@@ -180,7 +180,7 @@ requirejs([
     IPython.login_widget = login_widget;
     IPython.new_notebook_widget = new_buttons;
 
-    // events.trigger('app_initialized.DashboardApp');
+    events.trigger('app_initialized.DashboardApp');
     
     // // Now actually load nbextensions
     // utils.load_extensions_from_config(cfg);
