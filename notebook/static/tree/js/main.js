@@ -135,9 +135,9 @@ requirejs([
     };
 
     var enable_autorefresh = function(){
-        *
+        /**
          *refresh immediately , then start interval
-         
+         */
         var now = new Date();
 
         if (now - _last_refresh < IPython.min_delta_refresh*1000){
