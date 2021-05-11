@@ -132,13 +132,13 @@ requirejs([
           base_url: common_options.base_url,
           common_config: common_config
         });
-    // var notebook = new notebook.Notebook('div#notebook', $.extend({
-    //     events: events,
-    //     keyboard_manager: keyboard_manager,
-    //     save_widget: save_widget,
-    //     contents: contents,
-    //     config: config_section},
-    //     common_options));
+    var notebook = new notebook.Notebook('div#notebook', $.extend({
+        events: events,
+        keyboard_manager: keyboard_manager,
+        save_widget: save_widget,
+        contents: contents,
+        config: config_section},
+        common_options));
     // var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     // var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
     //     notebook: notebook,
