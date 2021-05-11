@@ -88,11 +88,11 @@ requirejs([
     var session_list = new sesssionlist.SesssionList($.extend({
         events: events},
         common_options));
-    var contents = new contents_service.Contents({
-        base_url: common_options.base_url,
-        common_config: common_config
-    });
-    // IPython.NotebookList = notebooklist.NotebookList;
+        var contents = new contents_service.Contents({
+            base_url: common_options.base_url,
+            common_config: common_config
+        });
+    IPython.NotebookList = notebooklist.NotebookList;
     // var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
     //     contents: contents,
     //     session_list:  session_list},
