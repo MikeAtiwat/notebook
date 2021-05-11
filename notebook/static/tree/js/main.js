@@ -170,7 +170,7 @@ requirejs([
     // // finally start it, it will refresh immediately
     // enable_autorefresh();
 
-    // page.show();
+    page.show();
 
     // // For backwards compatibility.
     // IPython.page = page;
