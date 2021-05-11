@@ -97,9 +97,9 @@ requirejs([
         contents: contents,
         session_list:  session_list},
         common_options));
-    // var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
-    //     session_list:  session_list},
-    //     common_options));
+    var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
+        session_list:  session_list},
+        common_options));
     
     // var terminal_list;
     // if (utils.get_body_data("terminalsAvailable") === "True") {
