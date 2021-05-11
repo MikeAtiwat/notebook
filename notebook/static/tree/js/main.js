@@ -97,23 +97,23 @@ requirejs([
         contents: contents,
         session_list:  session_list},
         common_options));
-    // var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
-    //     session_list:  session_list},
-    //     common_options));
+    var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
+        session_list:  session_list},
+        common_options));
     
-    // var terminal_list;
-    // if (utils.get_body_data("terminalsAvailable") === "True") {
-    //     terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
-    // }
+    var terminal_list;
+    if (utils.get_body_data("terminalsAvailable") === "True") {
+        terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
+    }
 
-    // var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
+    var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
 
-    // var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
-    //     $.extend(
-    //         {contents: contents, events: events},
-    //         common_options
-    //     )
-    // );
+    var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
+        $.extend(
+            {contents: contents, events: events},
+            common_options
+        )
+    );
 
     // var interval_id=0;
     // // auto refresh every xx secondes, no need to be fast,
