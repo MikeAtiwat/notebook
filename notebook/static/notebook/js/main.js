@@ -205,45 +205,45 @@ requirejs([
     IPython.save_widget = save_widget;
     IPython.tooltip = notebook.tooltip;
 
-    // try {
-    //     events.trigger('app_initialized.NotebookApp');
-    // } catch (e) {
-    //     console.error("Error in app_initialized callback", e);
-    // }
+    try {
+        events.trigger('app_initialized.NotebookApp');
+    } catch (e) {
+        console.error("Error in app_initialized callback", e);
+    }
 
-    // Object.defineProperty( IPython, 'actions', {
-    //   get: function() {
-    //       console.warn('accessing "actions" on the global IPython/Jupyter is not recommended. Pass it to your objects constructors at creation time');
-    //       return acts;
-    //   },
-    //   enumerable: true,
-    //   configurable: false
-    // });
+    Object.defineProperty( IPython, 'actions', {
+      get: function() {
+          console.warn('accessing "actions" on the global IPython/Jupyter is not recommended. Pass it to your objects constructors at creation time');
+          return acts;
+      },
+      enumerable: true,
+      configurable: false
+    });
 
-    // clipboard.setup_clipboard_events();
+    clipboard.setup_clipboard_events();
     
-    // // Now actually load nbextensionsload_extensions_from_config
-    // Promise.all([
-    //     utils.load_extensions_from_config(config_section),
-    //     utils.load_extensions_from_config(common_config),
-    // ])
-    // .catch(function(error) {
-    //     console.error('Could not load nbextensions from user config files', error);
-    // })
-    // // BEGIN HARDCODED WIDGETS HACK
-    // .then(function() {
-    //     if (!utils.is_loaded('jupyter-js-widgets/extension')) {
-    //         // Fallback to the ipywidgets extension
-    //         utils.load_extension('widgets/notebook/js/extension').catch(function () {
-    //             console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
-    //         });
-    //     }
-    // })
-    // .catch(function(error) {
-    //     console.error('Could not load ipywidgets', error);
-    // });
-    // // END HARDCODED WIDGETS HACK
+    // Now actually load nbextensionsload_extensions_from_config
+    Promise.all([
+        utils.load_extensions_from_config(config_section),
+        utils.load_extensions_from_config(common_config),
+    ])
+    .catch(function(error) {
+        console.error('Could not load nbextensions from user config files', error);
+    })
+    // BEGIN HARDCODED WIDGETS HACK
+    .then(function() {
+        if (!utils.is_loaded('jupyter-js-widgets/extension')) {
+            // Fallback to the ipywidgets extension
+            utils.load_extension('widgets/notebook/js/extension').catch(function () {
+                console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
+            });
+        }
+    })
+    .catch(function(error) {
+        console.error('Could not load ipywidgets', error);
+    });
+    // END HARDCODED WIDGETS HACK
 
-    // notebook.load_notebook(common_options.notebook_path);
+    notebook.load_notebook(common_options.notebook_path);
 
 });
