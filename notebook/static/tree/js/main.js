@@ -174,11 +174,11 @@ requirejs([
 
     // For backwards compatibility.
     IPython.page = page;
-    // IPython.notebook_list = notebook_list;
-    // IPython.session_list = session_list;
-    // IPython.kernel_list = kernel_list;
-    // IPython.login_widget = login_widget;
-    // IPython.new_notebook_widget = new_buttons;
+    IPython.notebook_list = notebook_list;
+    IPython.session_list = session_list;
+    IPython.kernel_list = kernel_list;
+    IPython.login_widget = login_widget;
+    IPython.new_notebook_widget = new_buttons;
 
     events.trigger('app_initialized.DashboardApp');
     
