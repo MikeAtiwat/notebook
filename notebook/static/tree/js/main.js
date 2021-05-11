@@ -106,7 +106,7 @@ requirejs([
         terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
     }
 
-    var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
+    // var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
 
     var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
         $.extend(
@@ -177,7 +177,7 @@ requirejs([
     IPython.notebook_list = notebook_list;
     IPython.session_list = session_list;
     IPython.kernel_list = kernel_list;
-    IPython.login_widget = login_widget;
+    // IPython.login_widget = login_widget;
     IPython.new_notebook_widget = new_buttons;
 
     events.trigger('app_initialized.DashboardApp');
