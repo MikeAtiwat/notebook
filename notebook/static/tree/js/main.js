@@ -107,7 +107,7 @@ requirejs([
         terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
     }
 
-    // var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
+    var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
 
     // var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
     //     $.extend(
