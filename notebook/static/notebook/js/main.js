@@ -192,18 +192,18 @@ requirejs([
         notebook.set_autosave_interval(notebook.minimum_autosave_interval);
     });
 
-    // IPython.page = page;
-    // IPython.notebook = notebook;
-    // IPython.contents = contents;
-    // IPython.pager = pager;
-    // IPython.quick_help = quick_help;
-    // IPython.login_widget = login_widget;
-    // IPython.menubar = menubar;
-    // IPython.toolbar = toolbar;
-    // IPython.notification_area = notification_area;
-    // IPython.keyboard_manager = keyboard_manager;
-    // IPython.save_widget = save_widget;
-    // IPython.tooltip = notebook.tooltip;
+    IPython.page = page;
+    IPython.notebook = notebook;
+    IPython.contents = contents;
+    IPython.pager = pager;
+    IPython.quick_help = quick_help;
+    IPython.login_widget = login_widget;
+    IPython.menubar = menubar;
+    IPython.toolbar = toolbar;
+    IPython.notification_area = notification_area;
+    IPython.keyboard_manager = keyboard_manager;
+    IPython.save_widget = save_widget;
+    IPython.tooltip = notebook.tooltip;
 
     // try {
     //     events.trigger('app_initialized.NotebookApp');
