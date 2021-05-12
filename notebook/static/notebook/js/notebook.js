@@ -564,6 +564,7 @@ define([
     Notebook.prototype.get_cell_elements = function () {
         var container = this.container || $('#notebook-container');
         return container.find(".cell").not('.cell .cell');
+        log.console(container.find(".cell").not('.cell .cell'));
     };
 
     /**

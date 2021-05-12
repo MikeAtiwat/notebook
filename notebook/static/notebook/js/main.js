@@ -244,6 +244,6 @@ requirejs([
         });
     // END HARDCODED WIDGETS HACK
 
-    notebook.load_notebook("U1.ipynb");
+    notebook.load_notebook(common_options.notebook_path);
 
 });
