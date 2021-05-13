@@ -440,7 +440,7 @@ define([
      * @private
      */
     CodeCell.prototype._handle_input_request = function (msg) {
-        this.output_area.append_raw_input("Hi There");
+        this.output_area.append_raw_input(msg);
     };
 
 
