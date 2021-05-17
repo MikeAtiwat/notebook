@@ -86,7 +86,11 @@ define([
     }
 
     var displayMetrics = function () {
-        console.log(utils.get_body_data('baseUrl')+'api')
+       
+      $.getJSON({url: utils.get_body_data('baseUrl') + 'api/',
+            success: function (data) {
+        console.log(utils.get_body_data(data))}
+      })
         if (document.hidden) {
             // Don't poll when nobody is looking
             return;
