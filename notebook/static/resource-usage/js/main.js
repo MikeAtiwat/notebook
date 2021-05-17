@@ -8,7 +8,7 @@ define([
                 .addClass('btn-group')
                 .addClass('pull-right')
                 .append(
-                    $('<strong>').text('Memory: ')
+                    $('<strong>').text('Hi Hi: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-mem')
                     .attr('title', 'Actively used Memory (updates every 5s)')
@@ -57,3 +57,8 @@ define([
             }
         });
     };
+
+
+setupDOM();
+displayMetrics();
+setInterval(displayMetrics, 1000 * 5);
