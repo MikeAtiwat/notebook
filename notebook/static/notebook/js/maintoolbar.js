@@ -28,7 +28,7 @@ define([
         this._make();
         this._create_resource();
         displayMetrics();
-        setInterval(displayMetrics, 1000 * 1);
+        setInterval(displayMetrics, 1000 * 5);
         Object.seal(this);
     };
 
@@ -43,7 +43,18 @@ define([
                     $('<strong>').text('Memory: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-mem')
-                    .attr('title', 'Actively used Memory (updates every 1s)')
+                    .attr('title', 'Actively used Memory (updates every 5s)')
+            )
+        );
+        $('#maintoolbar-container').append(
+            $('<div>').attr('id', 'jupyter-resource-usage-display')
+                .addClass('btn-group')
+                .addClass('pull-right')
+                .append(
+                    $('<strong>').text('CPU: ')
+                ).append(
+                $('<span>').attr('id', 'jupyter-resource-usage-cpu')
+                    .attr('title', 'Actively used CPU (updates every 5s)')
             )
         );
         // FIXME: Do something cleaner to get styles in here?
