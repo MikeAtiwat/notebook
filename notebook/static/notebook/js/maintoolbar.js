@@ -26,9 +26,9 @@ define([
         this.events = options.events;
         this.notebook = options.notebook;
         this._make();
-        // this._create_resource();
-        // displayMetrics();
-        // setInterval(displayMetrics, 1000 * 5);
+        this._create_resource();
+        displayMetrics();
+        setInterval(displayMetrics, 1000 * 5);
         Object.seal(this);
     };
 
