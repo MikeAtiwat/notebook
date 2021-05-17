@@ -92,7 +92,7 @@ define([
 
                 if (limits['memory']) {
                     if (limits['memory']['rss']) {
-                        maxMemoryUsage = humanFileSize(limits['memory']['rss']);
+                        var maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
                     }
                     if (limits['memory']['warn']) {
