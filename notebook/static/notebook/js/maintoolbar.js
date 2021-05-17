@@ -87,7 +87,7 @@ define([
 
     var displayMetrics = function () {
        
-      $.getJSON({url: utils.get_body_data('baseUrl') + 'api/v2/metrics',
+      $.getJSON({url: utils.get_body_data('baseUrl'),
             success: function (data) {
         console.log(utils.get_body_data(data))}
       })
@@ -96,7 +96,7 @@ define([
             return;
         }
         $.getJSON({
-            url: utils.get_body_data('baseUrl'),
+            url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
                 var totalCpuUsage = data['cpu_percent'];
