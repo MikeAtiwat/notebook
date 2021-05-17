@@ -87,9 +87,9 @@ define([
 
     var displayMetrics = function () {
        
-      $.getJSON({url: utils.get_body_data('baseUrl')+'api/metrics/v2',
+      $.getJSON({url: utils.get_body_data('baseUrl')+'api/metrics/v1',
             success: function (data) {
-        console.log(data)}
+        console.dir(data)}
       })
         if (document.hidden) {
             // Don't poll when nobody is looking
