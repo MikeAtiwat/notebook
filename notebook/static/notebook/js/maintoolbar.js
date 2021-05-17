@@ -89,7 +89,7 @@ define([
        
       $.getJSON({url: utils.get_body_data('baseUrl')+'api',
             success: function (data) {
-        console.log(utils.get_body_data(data))}
+        console.log(utils.get_body_data(JSON.stringify(data)))}
       })
         if (document.hidden) {
             // Don't poll when nobody is looking
