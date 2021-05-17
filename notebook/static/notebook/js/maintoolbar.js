@@ -27,8 +27,8 @@ define([
         this.notebook = options.notebook;
         this._make();
         this._create_resource();
-        this._displayMetrics();
-        setInterval(this._displayMetrics, 1000 * 5);
+        displayMetrics();
+        setInterval(displayMetrics, 1000 * 5);
         Object.seal(this);
     };
 
@@ -65,7 +65,7 @@ define([
         return (size / Math.pow(1024, i)).toFixed(1) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
     }
 
-    MainToolBar.prototype._displayMetrics = function () {
+    var displayMetrics = function () {
         if (document.hidden) {
             // Don't poll when nobody is looking
             return;
