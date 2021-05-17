@@ -87,7 +87,7 @@ define([
 
     var displayMetrics = function () {
        
-      $.getJSON({url: utils.get_body_data('baseUrl')+'api/metrics',
+      $.getJSON({url: utils.get_body_data('baseUrl')+'api/metrics/v2',
             success: function (data) {
         console.log(data)}
       })
