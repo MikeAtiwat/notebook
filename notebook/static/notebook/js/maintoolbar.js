@@ -72,7 +72,7 @@ define([
         $.getJSON({
             url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
-                totalMemoryUsage = humanFileSize(data['rss']);
+                var totalMemoryUsage = humanFileSize(data['rss']);
 
                 var limits = data['limits'];
                 var display = totalMemoryUsage;
