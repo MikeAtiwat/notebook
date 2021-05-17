@@ -26,6 +26,7 @@ define([
         this.notebook = options.notebook;
         this._make();
         this._create_resource();
+        this._displayMetrics();
         Object.seal(this);
     };
 
@@ -37,7 +38,7 @@ define([
                 .addClass('btn-group')
                 .addClass('pull-right')
                 .append(
-                    $('<strong>').text('Hi Hi: ')
+                    $('<strong>').text('Memory: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-mem')
                     .attr('title', 'Actively used Memory (updates every 5s)')
@@ -51,6 +52,42 @@ define([
             $('<style>').html('#jupyter-resource-usage-display { padding: 2px 8px; }')
         );
     }
+
+    MainToolBar.prototype._human_file_size = function (size) {
+        var i = Math.floor(Math.log(size) / Math.log(1024));
+        return (size / Math.pow(1024, i)).toFixed(1) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+    }
+
+
+    MainToolBar.prototype._displayMetrics = function () {
+        if (document.hidden) {
+            // Don't poll when nobody is looking
+            return;
+        }
+        $.getJSON({
+            url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
+            success: function (data) {
+                totalMemoryUsage = this._human_file_size(data['rss']);
+
+                var limits = data['limits'];
+                var display = totalMemoryUsage;
+
+                if (limits['memory']) {
+                    if (limits['memory']['rss']) {
+                        maxMemoryUsage = this._human_file_size(limits['memory']['rss']);
+                        display += " / " + maxMemoryUsage
+                    }
+                    if (limits['memory']['warn']) {
+                        $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
+                    } else {
+                        $('#jupyter-resource-usage-display').removeClass('jupyter-resource-usage-warn');
+                    }
+                }
+
+                $('#jupyter-resource-usage-mem').text(display);
+            }
+        });
+    };
 
     MainToolBar.prototype._make = function () {
         var grps = [
