@@ -85,7 +85,7 @@ define([
             url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
-                var totalCpuUsage = humanFileSize(data['cpu_percent']);
+                var totalCpuUsage = data['cpu_percent'];
                 console.log(totalMemoryUsage)
                 console.log(data)
                 var limits = data['limits'];
