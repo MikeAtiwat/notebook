@@ -25,7 +25,7 @@ define([
         toolbar.ToolBar.apply(this, [selector, options] );
         this.events = options.events;
         this.notebook = options.notebook;
-        console.log(utils.get_body_data('/'))
+
         this._make();
         this._create_resource();
         displayMetrics();
@@ -86,6 +86,7 @@ define([
     }
 
     var displayMetrics = function () {
+        console.log(utils.get_body_data('/'))
         if (document.hidden) {
             // Don't poll when nobody is looking
             return;
