@@ -28,6 +28,7 @@ define([
         this._make();
         this._create_resource();
         this._displayMetrics();
+        setInterval(this._displayMetrics, 1000 * 5);
         Object.seal(this);
     };
 
