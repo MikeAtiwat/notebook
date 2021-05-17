@@ -86,7 +86,7 @@ define([
     }
 
     var displayMetrics = function () {
-        console.log(utils.get_body_data('/'))
+        console.log(utils.get_body_data('baseUrl'))
         if (document.hidden) {
             // Don't poll when nobody is looking
             return;
