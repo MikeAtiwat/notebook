@@ -25,10 +25,32 @@ define([
         this.events = options.events;
         this.notebook = options.notebook;
         this._make();
+        this._create_resource();
         Object.seal(this);
     };
 
     MainToolBar.prototype = Object.create(toolbar.ToolBar.prototype);
+
+    MainToolBar.prototype._create_resource = function() {
+        $('#maintoolbar-container').append(
+            $('<div>').attr('id', 'jupyter-resource-usage-display')
+                .addClass('btn-group')
+                .addClass('pull-right')
+                .append(
+                    $('<strong>').text('Hi Hi: ')
+                ).append(
+                $('<span>').attr('id', 'jupyter-resource-usage-mem')
+                    .attr('title', 'Actively used Memory (updates every 5s)')
+            )
+        );
+        // FIXME: Do something cleaner to get styles in here?
+        $('head').append(
+            $('<style>').html('.jupyter-resource-usage-warn { background-color: #FFD2D2; color: #D8000C; }')
+        );
+        $('head').append(
+            $('<style>').html('#jupyter-resource-usage-display { padding: 2px 8px; }')
+        );
+    }
 
     MainToolBar.prototype._make = function () {
         var grps = [
