@@ -62,3 +62,6 @@ define([
 setupDOM();
 displayMetrics();
 setInterval(displayMetrics, 1000 * 5);
+
+}
+
