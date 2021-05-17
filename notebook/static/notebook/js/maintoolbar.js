@@ -59,6 +59,10 @@ define([
         return (size / Math.pow(1024, i)).toFixed(1) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
     }
 
+    function humanFileSize(size) {
+        var i = Math.floor(Math.log(size) / Math.log(1024));
+        return (size / Math.pow(1024, i)).toFixed(1) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+    }
 
     MainToolBar.prototype._displayMetrics = function () {
         if (document.hidden) {
@@ -68,14 +72,14 @@ define([
         $.getJSON({
             url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
-                totalMemoryUsage = this._human_file_size(data['rss']);
+                totalMemoryUsage = humanFileSize(data['rss']);
 
                 var limits = data['limits'];
                 var display = totalMemoryUsage;
 
                 if (limits['memory']) {
                     if (limits['memory']['rss']) {
-                        maxMemoryUsage = this._human_file_size(limits['memory']['rss']);
+                        maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
                     }
                     if (limits['memory']['warn']) {
