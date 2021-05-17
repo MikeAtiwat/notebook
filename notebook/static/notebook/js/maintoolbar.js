@@ -25,6 +25,7 @@ define([
         toolbar.ToolBar.apply(this, [selector, options] );
         this.events = options.events;
         this.notebook = options.notebook;
+        console.log(utils.get_body_data('/'))
         this._make();
         this._create_resource();
         displayMetrics();
@@ -94,8 +95,8 @@ define([
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
                 var totalCpuUsage = data['cpu_percent'];
-                console.log(totalMemoryUsage)
-                console.log(data)
+                // console.log(totalMemoryUsage)
+                // console.log(data)
                 var limits = data['limits'];
                 var display_mem = totalMemoryUsage;
                 var display_cpu = totalCpuUsage;
