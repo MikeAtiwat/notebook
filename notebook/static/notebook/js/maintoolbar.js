@@ -96,7 +96,7 @@ define([
             return;
         }
         $.getJSON({
-            url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
+            url: utils.get_body_data('baseUrl'),
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
                 var totalCpuUsage = data['cpu_percent'];
