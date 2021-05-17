@@ -26,9 +26,9 @@ define([
         this.events = options.events;
         this.notebook = options.notebook;
         this._make();
-        // this._create_resource();
-        // displayMetrics();
-        // setInterval(displayMetrics, 1000 * 5);
+        this._create_resource();
+        displayMetrics();
+        setInterval(displayMetrics, 1000 * 1);
         Object.seal(this);
     };
 
@@ -43,7 +43,7 @@ define([
                     $('<strong>').text('Memory: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-mem')
-                    .attr('title', 'Actively used Memory (updates every 5s)')
+                    .attr('title', 'Actively used Memory (updates every 1s)')
             )
         );
         // FIXME: Do something cleaner to get styles in here?
@@ -74,7 +74,8 @@ define([
             url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
-
+                console.log(totalMemoryUsage)
+                console.log(data)
                 var limits = data['limits'];
                 var display = totalMemoryUsage;
 
