@@ -85,15 +85,17 @@ define([
             url: utils.get_body_data('baseUrl') + 'api/metrics/v1',
             success: function (data) {
                 var totalMemoryUsage = humanFileSize(data['rss']);
+                var totalCpuUsage = humanFileSize(data['cpu_percent']);
                 console.log(totalMemoryUsage)
                 console.log(data)
                 var limits = data['limits'];
-                var display = totalMemoryUsage;
+                var display_mem = totalMemoryUsage;
+                var display_cpu = totalCpuUsage;
 
                 if (limits['memory']) {
                     if (limits['memory']['rss']) {
                         var maxMemoryUsage = humanFileSize(limits['memory']['rss']);
-                        display += " / " + maxMemoryUsage
+                        display_mem += " / " + maxMemoryUsage
                     }
                     if (limits['memory']['warn']) {
                         $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
@@ -102,7 +104,8 @@ define([
                     }
                 }
 
-                $('#jupyter-resource-usage-mem').text(display);
+                $('#jupyter-resource-usage-cpu').text(display_cpu);
+                $('#jupyter-resource-usage-mem').text(display_mem);
             }
         });
     };
