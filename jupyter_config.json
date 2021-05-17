@@ -1,7 +1,6 @@
 {
   "ResourceUseDisplay": {
     "track_cpu_percent": true,
-    "mem_limit": 8589934592,
-    "track_gpu":true
+    "mem_limit": 8589934592
   }
 }
