@@ -1,3 +1,18 @@
+// var bind = function bind(obj) {
+//   var slice = [].slice;
+//   var args = slice.call(arguments, 1),
+//     self = this,
+//     nop = function() {
+//     },
+//     bound = function() {
+//       return self.apply(this instanceof nop ? this : (obj || {}), args.concat(slice.call(arguments)));
+//     };
+//   nop.prototype = this.prototype || {}; // Firefox cries sometimes if prototype is undefined
+//   bound.prototype = new nop();
+//   return bound;
+// };
+// Function.prototype.bind = Function.prototype.bind || bind ;
+
 define([
     'jquery',
     'base/js/utils'
