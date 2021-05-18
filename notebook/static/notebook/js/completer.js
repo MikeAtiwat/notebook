@@ -88,6 +88,7 @@ define([
         events.on('kernel_idle.Kernel', function () {
             that.skip_kernel_completion = false;
         });
+        this.use_jedi = false;
     };
 
     Completer.prototype.startCompletion = function () {
