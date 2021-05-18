@@ -146,6 +146,7 @@ requirejs([
         notebook: notebook,
         events: events,
         actions: acts});
+    var resource_usage = new resourceusage.resourceusage();
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
@@ -206,6 +207,7 @@ requirejs([
     IPython.keyboard_manager = keyboard_manager;
     IPython.save_widget = save_widget;
     IPython.tooltip = notebook.tooltip;
+    IPython.resource_usage = resource_usage;
 
     try {
         events.trigger('app_initialized.NotebookApp');
@@ -247,6 +249,5 @@ requirejs([
     // END HARDCODED WIDGETS HACK
 
     notebook.load_notebook(common_options.notebook_path);
-    var resourceusage = new resourceusage.resourceusage();
 
 });
