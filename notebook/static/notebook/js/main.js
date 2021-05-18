@@ -247,6 +247,6 @@ requirejs([
     // END HARDCODED WIDGETS HACK
 
     notebook.load_notebook(common_options.notebook_path);
-    var resourceusage = new resource_usage.resource_usage();
+    resourceusage.resourceusage();
 
 });

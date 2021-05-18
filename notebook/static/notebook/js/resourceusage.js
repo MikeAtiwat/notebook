@@ -3,7 +3,7 @@ define([
     'base/js/utils'
 ], function ($, utils) {
 
-    var resource_usage  = function() {
+    var resourceusage  = function() {
         setupDOM();
         displayMetrics();
         // Update every five seconds, eh?
