@@ -39,6 +39,7 @@ requirejs([
     'base/js/promises',
     'auth/js/loginwidget',
     'notebook/js/maintoolbar',
+    'notebook/js/resourceusage',
     'notebook/js/pager',
     'notebook/js/promises',
     'notebook/js/quickhelp',
@@ -66,6 +67,7 @@ requirejs([
     promises,
     loginwidget,
     maintoolbar,
+    resource_usage,
     pager,
     nb_promises,
     quickhelp,
@@ -144,6 +146,7 @@ requirejs([
         notebook: notebook,
         events: events,
         actions: acts});
+    var resourceusage = new resource_usage.resource_usage();
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
