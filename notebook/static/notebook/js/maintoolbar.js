@@ -27,16 +27,16 @@ define([
         this.notebook = options.notebook;
 
         this._make();
-        this._create_resource();
-        displayMetrics();
-        setInterval(displayMetrics, 1000 * 5);
-        document.addEventListener("visibilitychange", function () {
-            // Update instantly when user activates notebook tab
-            // FIXME: Turn off update timer completely when tab not in focus
-            if (!document.hidden) {
-                displayMetrics();
-            }
-        }, false);
+        // this._create_resource();
+        // displayMetrics();
+        // setInterval(displayMetrics, 1000 * 5);
+        // document.addEventListener("visibilitychange", function () {
+        //     // Update instantly when user activates notebook tab
+        //     // FIXME: Turn off update timer completely when tab not in focus
+        //     if (!document.hidden) {
+        //         displayMetrics();
+        //     }
+        // }, false);
 
         Object.seal(this);
     };
