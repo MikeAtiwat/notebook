@@ -67,7 +67,7 @@ requirejs([
     promises,
     loginwidget,
     maintoolbar,
-    resource_usage,
+    resourceusage,
     pager,
     nb_promises,
     quickhelp,
@@ -247,6 +247,6 @@ requirejs([
     // END HARDCODED WIDGETS HACK
 
     notebook.load_notebook(common_options.notebook_path);
-    resourceusage.resourceusage();
+    var resourceusage = new resourceusage.resourceusage();
 
 });
