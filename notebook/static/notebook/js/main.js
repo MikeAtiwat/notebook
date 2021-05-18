@@ -146,7 +146,7 @@ requirejs([
         notebook: notebook,
         events: events,
         actions: acts});
-    var resource_usage = new resourceusage.resourceusage();
+    var resource_usage = new resourceusage.ResourceUsage();
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
