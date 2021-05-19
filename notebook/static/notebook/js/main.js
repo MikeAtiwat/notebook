@@ -120,7 +120,8 @@ requirejs([
     var pager = new pager.Pager('div#pager', {
         events: events});
     pager.expand();
-    pager.detach();
+    pager.append("I LOVE YOU");
+    // pager.detach();
     var acts = new actions.init();
     var keyboard_manager = new keyboardmanager.KeyboardManager({
         pager: pager,
