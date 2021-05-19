@@ -119,6 +119,7 @@ requirejs([
     var page = new page.Page('div#header', 'div#site');
     var pager = new pager.Pager('div#pager', {
         events: events});
+    pager.expand();
     var acts = new actions.init();
     var keyboard_manager = new keyboardmanager.KeyboardManager({
         pager: pager,
