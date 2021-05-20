@@ -159,7 +159,8 @@ requirejs([
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
 
-    var sidebar = new sidebar.SideBar('#main')
+    var button_sidebar = new sidebar.SideBar('#main')
+    var sidebar = new sidebar.SideBar('#mySidebar')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
         contents: contents,
