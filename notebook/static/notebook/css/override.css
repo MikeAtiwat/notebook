@@ -47,7 +47,7 @@ a hack to deal with our current css styles and no new styling should be added in
 .openbtn {
   position: absolute;
   top: 0;
-  margin-right: 0px;
+  right: 0px;
   font-size: 36px;
 /*  margin-left: 50px;*/
   font-size: 20px;
