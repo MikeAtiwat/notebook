@@ -66,11 +66,11 @@ a hack to deal with our current css styles and no new styling should be added in
   /*padding: 20px;*/
 }
 
-.sidenbar a, .dropdown-btn {
+.sidebar a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: #ffffff;
   display: block;
   border: none;
   background: none;
