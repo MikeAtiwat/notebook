@@ -49,10 +49,10 @@ a hack to deal with our current css styles and no new styling should be added in
   top: 0;
   right: 25px;
   font-size: 36px;
+   margin-left: 50px;
 }
 /* The button used to open the sidebar */
 .openbtn {
-
   font-size: 20px;
   cursor: pointer;
   background-color: #111;
