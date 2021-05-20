@@ -44,11 +44,15 @@ a hack to deal with our current css styles and no new styling should be added in
   margin-left: 50px;
 }
 
+.main .openbtn{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
 /* The button used to open the sidebar */
 .openbtn {
-  right: 0;
-  top: 0;
-  margin-right: 0;
+
   font-size: 20px;
   cursor: pointer;
   background-color: #111;
