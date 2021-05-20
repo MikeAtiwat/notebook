@@ -9,6 +9,7 @@ define([
 
     var SideBar = function (selector) {
         this.selector = selector;
+        this.open = false;
         if (this.selector !== undefined) {
             this.element = $(selector);
             this.bind_events();
@@ -18,19 +19,19 @@ define([
 
     SideBar.prototype.bind_events = function () {
         var that = this;
+        var open_true = this.open
         this.element.find("#open_btn").click(function () {
+        if(open_true){
 			  document.getElementById("mySidebar").style.width = "250px";
 			  document.getElementById("main").style.marginLeft = "250px";
-			  document.getElementById('open_btn').id = 'close_btn';
-        });
-        this.element.find("#close_btn").click(function () {
+			  this.open = true;
+    	}else{
 			  document.getElementById("mySidebar").style.width = "0";
 			  document.getElementById("main").style.marginLeft = "0";
-			  document.getElementById('close_btn').id = 'open_btn';
-        });
+			  this.open = false;    		
+    	}
+    
+    });
     };
-
     return {'SideBar': SideBar};
 });
-
-
