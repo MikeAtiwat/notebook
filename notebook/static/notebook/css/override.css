@@ -47,6 +47,7 @@ a hack to deal with our current css styles and no new styling should be added in
 /* The button used to open the sidebar */
 .openbtn {
   right: 0;
+  top: 0;
   margin-right: 0;
   font-size: 20px;
   cursor: pointer;
