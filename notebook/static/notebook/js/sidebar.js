@@ -24,7 +24,7 @@ define([
        	console.log(open_true)
         if(!open_true){
 			  document.getElementById("mySidebar").style.width = "250px";
-			  document.getElementById("main").style.marginRight = "250px";
+			  document.getElementById("main").style.marginRight = "230px";
 			  this.open = true;
     	}else{
 			  document.getElementById("mySidebar").style.width = "0";
