@@ -52,6 +52,7 @@ a hack to deal with our current css styles and no new styling should be added in
   color: white;
   padding: 10px 15px;
   border: none;
+  right: 0;
 }
 
 .openbtn:hover {
