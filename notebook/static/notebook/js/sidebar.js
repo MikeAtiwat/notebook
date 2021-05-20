@@ -8,7 +8,6 @@ define([
     "use strict";
 
     var SideBar = function (selector) {
-        options = options || {};
         this.selector = selector;
         if (this.selector !== undefined) {
             this.element = $(selector);
