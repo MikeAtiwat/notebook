@@ -339,11 +339,11 @@ data-notebook-path="{{notebook_path | urlencode}}"
 </div>
 
 
+
 <div class="lower-header-bar"></div>
-{% endblock header %}
 
 <div id="mySidebar" class="sidebar">
-<div id="mySidebar-container" class="closebtn">&times;</a>
+    <a href="#" id ="close_btn" class="closebtn">&times;</a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
@@ -351,8 +351,12 @@ data-notebook-path="{{notebook_path | urlencode}}"
 </div>
 
 <div id="main">
-  <button class="openbtn">&#9776; Open Sidebar</button>
+  <button id="open_btn" class="openbtn">&#9776; Open Sidebar</button>
+  <h2>Collapsed Sidebar</h2>
+  <p>Content...</p>
 </div>
+
+{% endblock header %}
 
 {% block site %}
 

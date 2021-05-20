@@ -52,6 +52,7 @@ requirejs([
     'codemirror/lib/codemirror',
     'notebook/js/about',
     'notebook/js/searchandreplace',
+    'notebook/js/sidebar',
     'notebook/js/clipboard',
     'bidi/bidi',
     'notebook/js/celltoolbarpresets/tags'
@@ -80,6 +81,7 @@ requirejs([
     CodeMirror,
     about,
     searchandreplace,
+    sidebar,
     clipboard,
     bidi
     ) {
@@ -156,6 +158,8 @@ requirejs([
         notebook: notebook});
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
+
+    var sidebar = new sidebar.SideBar('#main')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
         contents: contents,

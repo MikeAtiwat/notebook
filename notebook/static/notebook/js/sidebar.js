@@ -1,11 +1,35 @@
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
+// Copyright (c) Jupyter Development Team.
+// Distributed under the terms of the Modified BSD License.
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
+define([
+    'jquery',
+    'base/js/utils',
+], function($, utils){
+    "use strict";
+
+    var SideBar = function (selector) {
+        options = options || {};
+        this.selector = selector;
+        if (this.selector !== undefined) {
+            this.element = $(selector);
+            this.bind_events();
+        }
+    };
+
+
+    SideBar.prototype.bind_events = function () {
+        var that = this;
+        this.element.find("#open_btn").click(function () {
+			  document.getElementById("mySidebar").style.width = "250px";
+			  document.getElementById("main").style.marginLeft = "250px";
+        });
+        this.element.find("#close_btn").click(function () {
+			  document.getElementById("mySidebar").style.width = "0";
+			  document.getElementById("main").style.marginLeft = "0";
+        });
+    };
+
+    return {'SideBar': SideBar};
+});
+
+
