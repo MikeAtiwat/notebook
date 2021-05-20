@@ -60,6 +60,7 @@ a hack to deal with our current css styles and no new styling should be added in
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
+  right: 0;
   transition: margin-right .5s; /* If you want a transition effect */
   padding: 20px;
 }
