@@ -46,8 +46,8 @@ a hack to deal with our current css styles and no new styling should be added in
 /* The button used to open the sidebar */
 .openbtn {
   position: absolute;
-  top: 100;
-  right: 250px;
+  top: 0;
+  margin-right: 0px;
   font-size: 36px;
 /*  margin-left: 50px;*/
   font-size: 20px;
@@ -64,7 +64,7 @@ a hack to deal with our current css styles and no new styling should be added in
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-right .5s; /* If you want a transition effect */
+  transition: margin-left .5s; /* If you want a transition effect */
   padding: 20px;
 }
 
