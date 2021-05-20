@@ -21,10 +21,12 @@ define([
         this.element.find("#open_btn").click(function () {
 			  document.getElementById("mySidebar").style.width = "250px";
 			  document.getElementById("main").style.marginLeft = "250px";
+			  document.getElementById('open_btn').id = 'close_btn';
         });
         this.element.find("#close_btn").click(function () {
 			  document.getElementById("mySidebar").style.width = "0";
 			  document.getElementById("main").style.marginLeft = "0";
+			  document.getElementById('close_btn').id = 'open_btn';
         });
     };
 
