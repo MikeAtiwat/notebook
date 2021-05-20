@@ -36,13 +36,13 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 /* Position and style the close button (top right corner) */
-.sidebar .closebtn {
+/*.sidebar .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}
+}*/
 /* The button used to open the sidebar */
 .openbtn {
   float: right;
