@@ -162,7 +162,7 @@ requirejs([
         events: events},
         common_options));
     IPython.NotebookList = notebooklist.NotebookList;
-    var notebook_list = new notebooklist.NotebookList('div#notebook', $.extend({
+    var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
         contents: contents,
         session_list:  session_list},
         common_options));
