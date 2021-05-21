@@ -94,6 +94,7 @@ define([
     };
 
     var NotebookList = function (selector, options) {
+        console.log(selector)
         /**
          * Constructor
          *
