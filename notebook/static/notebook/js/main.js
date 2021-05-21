@@ -61,7 +61,6 @@ requirejs([
     contents_service,
     IPython,
     notebook,
-    notebooklist,
     configmod,
     utils,
     page,
