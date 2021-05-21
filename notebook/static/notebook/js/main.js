@@ -54,6 +54,8 @@ requirejs([
     'notebook/js/searchandreplace',
     'notebook/js/buttonsidebar',
     'notebook/js/sidebar',
+    'notebook/js/notebooklist',
+    'notebook/js/sessionlist',
     'notebook/js/clipboard',
     'bidi/bidi',
     'notebook/js/celltoolbarpresets/tags'
@@ -84,6 +86,8 @@ requirejs([
     searchandreplace,
     buttonsidebar,
     sidebar,
+    notebooklist,
+    sessionlist,
     clipboard,
     bidi,
     ) {
@@ -148,6 +152,21 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
+    
+    var session_list = new sesssionlist.SesssionList($.extend({
+        events: events},
+        common_options));
+        var contents = new contents_service.Contents({
+            base_url: common_options.base_url,
+            common_config: common_config
+        });
+        
+    IPython.NotebookList = notebooklist.NotebookList;
+    var notebook_list = new notebooklist.NotebookList('#mySidebar', $.extend({
+        contents: contents,
+        session_list:  session_list},
+        common_options));
+
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
         notebook: notebook,
