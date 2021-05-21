@@ -10,6 +10,7 @@ define([
     "use strict";
 
     var SideBar = function (selector) {
+        console.log("...")
         this.selector = selector;
         this.open = false;
         if (this.selector !== undefined) {
