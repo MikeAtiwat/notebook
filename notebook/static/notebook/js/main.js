@@ -161,6 +161,7 @@ requirejs([
     var session_list = new sesssionlist.SesssionList($.extend({
         events: events},
         common_options));
+    IPython.NotebookList = notebooklist.NotebookList;
     var notebook_list = new notebooklist.NotebookList('div#notebook', $.extend({
         contents: contents,
         session_list:  session_list},
@@ -235,6 +236,7 @@ requirejs([
     IPython.save_widget = save_widget;
     IPython.tooltip = notebook.tooltip;
     IPython.resource_usage = resource_usage;
+
 
     try {
         events.trigger('app_initialized.NotebookApp');
