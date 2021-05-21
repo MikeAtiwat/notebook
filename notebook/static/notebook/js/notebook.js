@@ -762,7 +762,7 @@ define([
      * @return True if the index is valid, false otherwise
      */
     Notebook.prototype.is_valid_cell_index = function (index) {
-          {
+        if (index !== null && index >= 0 && index < this.ncells()) {
             return true;
         } else {
             return false;
