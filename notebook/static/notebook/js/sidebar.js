@@ -17,7 +17,7 @@ define([
     };
 
 
-    ButtonSideBar.prototype.bind_events = function () {
+    SideBar.prototype.bind_events = function () {
         var dropdown = document.getElementsByClassName("dropdown-btn");
         var i;
 
