@@ -23,8 +23,8 @@ define([
          var open_true = this.open
          console.log(open_true)
         if(!open_true){
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginRight = "250px";
+        document.getElementById("mySidebar").style.width = "500px";
+        document.getElementById("main").style.marginRight = "500px";
         this.open = true;
       }else{
         document.getElementById("mySidebar").style.width = "0";
