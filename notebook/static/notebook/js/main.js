@@ -87,7 +87,7 @@ requirejs([
     buttonsidebar,
     sidebar,
     notebooklist,
-    sessionlist,
+    sesssionlist,
     clipboard,
     bidi,
     ) {
@@ -153,7 +153,7 @@ requirejs([
         config: config_section},
         common_options));
 
-    var session_list = new sesssionlist.SessionList($.extend({
+    var sesssion_list = new sesssionlist.SesssionList($.extend({
         events: events},
         common_options));
         var contents = new contents_service.Contents({
