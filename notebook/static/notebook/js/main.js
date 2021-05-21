@@ -181,8 +181,8 @@ requirejs([
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
 
-    // var button_sidebar = new buttonsidebar.ButtonSideBar('#main')
-    // var sidebar = new sidebar.SideBar('#mySidebar')
+    // * var button_sidebar = new buttonsidebar.ButtonSideBar('#main')
+    //* var sidebar = new sidebar.SideBar('#mySidebar')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
         contents: contents,
