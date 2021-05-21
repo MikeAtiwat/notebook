@@ -7,7 +7,7 @@ define([
 ], function($, utils){
     "use strict";
 
-    var SideBar = function (selector) {
+    var ButtonSideBar = function (selector) {
         this.selector = selector;
         this.open = false;
         if (this.selector !== undefined) {
@@ -37,5 +37,5 @@ define([
     };
 
 
-    return {'SideBar': SideBar};
+    return {'ButtonSideBar': ButtonSideBar};
 });
