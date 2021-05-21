@@ -81,7 +81,7 @@ requirejs([
     about,
     searchandreplace,
     clipboard,
-    bidi,
+    bidi
     ) {
     "use strict";
 
