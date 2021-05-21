@@ -32,7 +32,6 @@ requirejs([
     'contents',
     'base/js/namespace',
     'notebook/js/notebook',
-    'notebook/js/notebooklist',
     'services/config',
     'base/js/utils',
     'base/js/page',
@@ -53,15 +52,9 @@ requirejs([
     'codemirror/lib/codemirror',
     'notebook/js/about',
     'notebook/js/searchandreplace',
-    // 'notebook/js/buttonsidebar',
     'notebook/js/sidebar',
     'notebook/js/clipboard',
     'bidi/bidi',
-    'tree/js/sessionlist',
-    'tree/js/kernellist',
-    'tree/js/terminallist',
-    'tree/js/newnotebook',
-    'tree/js/shutdownbutton',
     'notebook/js/celltoolbarpresets/tags'
 ], function(
     $,
@@ -89,15 +82,9 @@ requirejs([
     CodeMirror,
     about,
     searchandreplace,
-    // buttonsidebar,
     sidebar,
     clipboard,
     bidi,
-    sesssionlist,
-    kernellist,
-    terminallist,
-    newnotebook,
-    shutdownbutton,
     ) {
     "use strict";
 
@@ -160,14 +147,6 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
-    // var session_list = new sesssionlist.SesssionList($.extend({
-    //     events: events},
-    //     common_options));
-    // IPython.NotebookList = notebooklist.NotebookList;
-    // var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
-    //     contents: contents,
-    //     session_list:  session_list},
-    //     common_options));
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
         notebook: notebook,
@@ -181,8 +160,7 @@ requirejs([
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
 
-    // * var button_sidebar = new buttonsidebar.ButtonSideBar('#main')
-    //* var sidebar = new sidebar.SideBar('#mySidebar')
+    var button_sidebar = new sidebar.ButtonSideBar('#main')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
         contents: contents,
