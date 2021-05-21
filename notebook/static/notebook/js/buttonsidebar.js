@@ -17,7 +17,7 @@ define([
     };
 
 
-    SideBar.prototype.bind_events = function () {
+    ButtonSideBar.prototype.bind_events = function () {
         var that = this;
         this.element.find("#open_btn").click(function () {
          var open_true = this.open
