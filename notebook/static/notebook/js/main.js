@@ -56,6 +56,11 @@ requirejs([
     'notebook/js/sidebar',
     'notebook/js/clipboard',
     'bidi/bidi',
+    'tree/js/sessionlist',
+    'tree/js/kernellist',
+    'tree/js/terminallist',
+    'tree/js/newnotebook',
+    'tree/js/shutdownbutton',
     'notebook/js/celltoolbarpresets/tags'
 ], function(
     $,
@@ -85,7 +90,12 @@ requirejs([
     searchandreplace,
     sidebar,
     clipboard,
-    bidi
+    bidi,
+    sesssionlist,
+    kernellist,
+    terminallist,
+    newnotebook,
+    shutdownbutton,
     ) {
     "use strict";
 
@@ -148,7 +158,10 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
-    var notebook_list = new notebooklist.NotebookList('#dropdown-container');
+    var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
+        contents: contents,
+        session_list:  session_list},
+        common_options));
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
         notebook: notebook,
