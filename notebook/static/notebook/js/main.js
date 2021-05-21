@@ -152,8 +152,8 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
-    
-    var session_list = new sesssionlist.SesssionList($.extend({
+
+    var session_list = new sesssionlist.SessionList($.extend({
         events: events},
         common_options));
         var contents = new contents_service.Contents({
