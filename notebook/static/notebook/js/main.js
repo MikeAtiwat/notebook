@@ -161,7 +161,7 @@ requirejs([
     var session_list = new sesssionlist.SesssionList($.extend({
         events: events},
         common_options));
-    var notebook_list = new notebooklist.NotebookList('#dropdown-container', $.extend({
+    var notebook_list = new notebooklist.NotebookList('#data-d-btn', $.extend({
         contents: contents,
         session_list:  session_list},
         common_options));
