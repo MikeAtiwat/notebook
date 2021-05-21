@@ -39,6 +39,7 @@ requirejs([
     'base/js/promises',
     'auth/js/loginwidget',
     'notebook/js/maintoolbar',
+    'notebook/js/resourceusage',
     'notebook/js/pager',
     'notebook/js/promises',
     'notebook/js/quickhelp',
@@ -51,6 +52,7 @@ requirejs([
     'codemirror/lib/codemirror',
     'notebook/js/about',
     'notebook/js/searchandreplace',
+    'notebook/js/sidebar',
     'notebook/js/clipboard',
     'bidi/bidi',
     'notebook/js/celltoolbarpresets/tags'
@@ -66,6 +68,7 @@ requirejs([
     promises,
     loginwidget,
     maintoolbar,
+    resourceusage,
     pager,
     nb_promises,
     quickhelp,
@@ -78,8 +81,9 @@ requirejs([
     CodeMirror,
     about,
     searchandreplace,
+    sidebar,
     clipboard,
-    bidi
+    bidi,
     ) {
     "use strict";
 
@@ -117,6 +121,9 @@ requirejs([
     var page = new page.Page('div#header', 'div#site');
     var pager = new pager.Pager('div#pager', {
         events: events});
+    pager.expand();
+    pager.append("I LOVE YOU");
+    // pager.detach();
     var acts = new actions.init();
     var keyboard_manager = new keyboardmanager.KeyboardManager({
         pager: pager,
@@ -144,12 +151,15 @@ requirejs([
         notebook: notebook,
         events: events,
         actions: acts});
+    var resource_usage = new resourceusage.ResourceUsage();
     var quick_help = new quickhelp.QuickHelp({
         keyboard_manager: keyboard_manager,
         events: events,
         notebook: notebook});
     keyboard_manager.set_notebook(notebook);
     keyboard_manager.set_quickhelp(quick_help);
+
+    var button_sidebar = new sidebar.ButtonSideBar('#main')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
         contents: contents,
@@ -204,6 +214,8 @@ requirejs([
     IPython.keyboard_manager = keyboard_manager;
     IPython.save_widget = save_widget;
     IPython.tooltip = notebook.tooltip;
+    IPython.resource_usage = resource_usage;
+
 
     try {
         events.trigger('app_initialized.NotebookApp');
@@ -223,25 +235,25 @@ requirejs([
     clipboard.setup_clipboard_events();
     
     // Now actually load nbextensionsload_extensions_from_config
-    Promise.all([
-        utils.load_extensions_from_config(config_section),
-        utils.load_extensions_from_config(common_config),
-    ])
-    .catch(function(error) {
-        console.error('Could not load nbextensions from user config files', error);
-    })
-    // BEGIN HARDCODED WIDGETS HACK
-    .then(function() {
-        if (!utils.is_loaded('jupyter-js-widgets/extension')) {
-            // Fallback to the ipywidgets extension
-            utils.load_extension('widgets/notebook/js/extension').catch(function () {
-                console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
-            });
-        }
-    })
-    .catch(function(error) {
-        console.error('Could not load ipywidgets', error);
-    });
+        Promise.all([
+            utils.load_extensions_from_config(config_section),
+            utils.load_extensions_from_config(common_config),
+        ])
+        .catch(function(error) {
+            console.error('Could not load nbextensions from user config files', error);
+        })
+        // BEGIN HARDCODED WIDGETS HACK
+        .then(function() {
+            if (!utils.is_loaded('jupyter-js-widgets/extension')) {
+                // Fallback to the ipywidgets extension
+                utils.load_extension('widgets/notebook/js/extension').catch(function () {
+                    console.warn('Widgets are not available.  Please install widgetsnbextension or ipywidgets 4.0');
+                });
+            }
+        })
+        .catch(function(error) {
+            console.error('Could not load ipywidgets', error);
+        });
     // END HARDCODED WIDGETS HACK
 
     notebook.load_notebook(common_options.notebook_path);
