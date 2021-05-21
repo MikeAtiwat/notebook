@@ -367,10 +367,6 @@ data-notebook-path="{{notebook_path | urlencode}}"
   <button id="open_btn" class="openbtn">&#9776; Open Sidebar</button>
 </div>
 
-{% endblock header %}
-
-{% block site %}
-
 <div id="notebook_list">
             <div id="notebook_list_header" class="row list_header">
                       <div class="btn-group dropdown" id="tree-selector">
@@ -412,6 +408,12 @@ data-notebook-path="{{notebook_path | urlencode}}"
 </div>
 
 </div>
+
+{% endblock header %}
+
+{% block site %}
+
+
 
 <div id="ipython-main-app">
     <div id="notebook_panel">
