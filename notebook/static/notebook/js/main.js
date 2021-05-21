@@ -162,7 +162,7 @@ requirejs([
         });
         
     IPython.NotebookList = notebooklist.NotebookList;
-    var notebook_list = new notebooklist.NotebookList('#dropdown-container', $.extend({
+    var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
         contents: contents,
         session_list:  session_list},
         common_options));
