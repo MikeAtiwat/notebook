@@ -32,7 +32,7 @@ define([
     './celltoolbarpresets/tags',
     './scrollmanager',
     './commandpalette',
-    './shortcuteditor',
+    './shortcuteditor'
 ], function (
     $,
     IPython,
