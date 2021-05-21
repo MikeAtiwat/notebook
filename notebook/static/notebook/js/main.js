@@ -32,6 +32,7 @@ requirejs([
     'contents',
     'base/js/namespace',
     'notebook/js/notebook',
+    'notebook/js/notebooklist',
     'services/config',
     'base/js/utils',
     'base/js/page',
@@ -61,6 +62,7 @@ requirejs([
     contents_service,
     IPython,
     notebook,
+    notebooklist,
     configmod,
     utils,
     page,
@@ -146,6 +148,7 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
+    var notebook_list = new notebooklist.NotebookList('#dropdown-container');
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
         notebook: notebook,
