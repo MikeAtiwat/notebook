@@ -158,6 +158,9 @@ requirejs([
         contents: contents,
         config: config_section},
         common_options));
+    var session_list = new sesssionlist.SesssionList($.extend({
+        events: events},
+        common_options));
     var notebook_list = new notebooklist.NotebookList('#dropdown-container', $.extend({
         contents: contents,
         session_list:  session_list},
