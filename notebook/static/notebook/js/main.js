@@ -182,7 +182,7 @@ requirejs([
     keyboard_manager.set_quickhelp(quick_help);
 
     var button_sidebar = new buttonsidebar.SideBar('#main')
-    console.log("abc")
+
     var sidebar = new sidebar.SideBar('#mySidebar')
     var menubar = new menubar.MenuBar('#menubar', $.extend({
         notebook: notebook,
@@ -281,5 +281,6 @@ requirejs([
     // END HARDCODED WIDGETS HACK
 
     notebook.load_notebook(common_options.notebook_path);
+    console.log("abc")
 
 });
