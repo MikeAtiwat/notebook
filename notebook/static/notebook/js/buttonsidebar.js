@@ -25,10 +25,14 @@ define([
         if(!open_true){
         document.getElementById("mySidebar").style.width = "250px";
         document.getElementById("main").style.marginRight = "250px";
+        document.getElementById("site").style.marginRight = "250px";
+        document.getElementById("header").style.marginRight = "250px";
         this.open = true;
       }else{
         document.getElementById("mySidebar").style.width = "0";
         document.getElementById("main").style.marginRight = "0";
+        document.getElementById("site").style.marginRight = "0";
+        document.getElementById("header").style.marginRight = "0";
         this.open = false;        
       }
 
