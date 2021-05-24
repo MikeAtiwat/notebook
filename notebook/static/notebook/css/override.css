@@ -75,10 +75,13 @@ a hack to deal with our current css styles and no new styling should be added in
   font-size: 14px;
 }
 
-.item_link {
+/*.item_link {
   width: 50px;
-}
+}*/
 
+.list_header > div, .list_item > div {
+   width: 50px;
+}
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
