@@ -68,11 +68,11 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 .list_container {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .item_name {
-  line-height: 10px;
+  font-size: 14px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
