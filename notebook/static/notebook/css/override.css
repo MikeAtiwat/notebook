@@ -78,6 +78,16 @@ a hack to deal with our current css styles and no new styling should be added in
   /*padding: 20px;*/
 }
 
+#site {
+  transition: margin-right .5s; /* If you want a transition effect */
+  /*padding: 20px;*/
+}
+
+#notebook_panel {
+  transition: margin-right .5s; /* If you want a transition effect */
+  /*padding: 20px;*/
+}
+
 .sidebar a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
