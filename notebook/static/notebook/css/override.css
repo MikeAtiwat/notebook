@@ -79,6 +79,11 @@ a hack to deal with our current css styles and no new styling should be added in
   width: 50px;
 }*/
 
+.item_link {
+    margin-left: -1px;
+    vertical-align: baseline;
+    line-height: 22px;
+}
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
