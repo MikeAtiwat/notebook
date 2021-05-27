@@ -589,6 +589,9 @@ define([
             .addClass('item_icon_nb')
             .appendTo(item);
 
+        $('<p/>')
+            .addClass('new_text')
+            .appendTo(item);
 
         var link = $("<a/>")
             .addClass("item_link_nb")
@@ -602,9 +605,7 @@ define([
             .addClass('new_item_icon_nb')
             .appendTo(item);
 
-        $('<p/>')
-            .addClass('new_text')
-            .appendTo(item);
+
 
      
         var div = $('<div/>')
