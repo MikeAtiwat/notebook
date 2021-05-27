@@ -370,7 +370,7 @@ define([
 
     NotebookList.prototype.sessions_loaded = function(data){
         this.sessions = data;
-        this.load_sessions();
+        this.load_list();
     };
 
     NotebookList.prototype.load_list = function () {
@@ -487,7 +487,7 @@ define([
             item = this.new_item(0);
             var span12 = item.children().first();
             span12.empty();
-            span12.append($('<div style="margin:auto;text-align:center;color:red"/>').text(message));
+            span12.append($('<div style="margin:auto;text-align:center;color:grey"/>').text(message));
         }
         var path = this.notebook_path;
         var offset = n_uploads;
@@ -576,6 +576,14 @@ define([
             .addClass("col-md-12_nb")
             .appendTo(row);
 
+        var link = $("<a/>")
+            .addClass("item_link_nb")
+            .appendTo(item);
+
+        $("<span/>")
+            .addClass("item_name_nb")
+            .appendTo(link);
+
 
         var checkbox;
         if (selectable !== undefined) {
@@ -589,23 +597,7 @@ define([
             .addClass('item_icon_nb')
             .appendTo(item);
 
-        // $('<p/>')
-        //     .addClass('new_text')
-        //     .appendTo(item);
-
-        var link = $("<a/>")
-            .addClass("item_link_nb")
-            .appendTo(item);
-
-        $("<span/>")
-            .addClass("item_name_nb")
-            .appendTo(link);
-
-        $('<i/>')
-            .addClass('new_item_icon_nb')
-            .appendTo(item);
-
-
+     
         var div = $('<div/>')
             .addClass('pull-right')
             .appendTo(item);
@@ -912,7 +904,6 @@ define([
         }
 
         item.find(".item_icon_nb").addClass(icon).addClass('icon-fixed-width');
-        item.find(".new_item_icon_nb").addClass(icon).addClass('icon-fixed-width');
         var link = item.find("a.item_link_nb")
             .attr('href',
                 utils.url_path_join(
@@ -960,7 +951,6 @@ define([
     NotebookList.prototype.add_name_input = function (name, item, icon_type) {
         item.data('name', name);
         item.find(".item_icon_nb").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
-        item.find(".new_item_icon_nb").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
         item.find(".item_name_nb").empty().append(
             $('<input/>')
             .addClass("filename_input")
