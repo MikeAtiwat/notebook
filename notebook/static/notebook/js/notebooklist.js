@@ -890,7 +890,7 @@ define([
         item.data('path', model.path);
         item.data('modified', model.last_modified);
         item.data('type', model.type);
-        item.find(".item_name_nb").text("bidi.applyBidi(model.name)");
+        item.find(".item_name_nb").text(bidi.applyBidi(model.name));
         item.find(".tex_abc").text(bidi.applyBidi(model.name));
         var icon = NotebookList.icons[model.type];
         if (running) {
