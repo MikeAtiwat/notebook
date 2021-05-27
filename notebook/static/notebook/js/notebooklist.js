@@ -455,7 +455,7 @@ define([
         // Update the page title so the browser tab reflects it
         // Match how the title appears with a trailing slash or
         // "Home" if the page loads from the server.
-        $('title').text(path ? path+'/' : i18n.msg._("Home"));
+        // $('title').text(path ? path+'/' : i18n.msg._("Home"));
     };
 
     /**
@@ -947,7 +947,6 @@ define([
                     'tree',
                     utils.encode_uri_components(model.path)
                 ));
-                console.log(model.path)
                 that.update_location(model.path);
                 return false;
             });
