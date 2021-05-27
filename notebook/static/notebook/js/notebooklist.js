@@ -598,6 +598,10 @@ define([
         $("<span/>")
             .addClass("item_name_nb")
             .appendTo(link);
+
+        $('<i/>')
+            .addClass('new_item_icon_nb')
+            .appendTo(item);
      
         var div = $('<div/>')
             .addClass('pull-right')
