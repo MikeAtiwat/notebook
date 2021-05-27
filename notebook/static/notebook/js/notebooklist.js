@@ -580,9 +580,9 @@ define([
             .addClass("item_link_nb")
             .appendTo(item);
 
-        $("<span/>")
-            .addClass("item_name_nb")
-            .appendTo(link);
+        // $("<span/>")
+        //     .addClass("item_name_nb")
+        //     .appendTo(link);
 
 
         var checkbox;
