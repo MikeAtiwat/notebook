@@ -955,9 +955,6 @@ define([
 
         var filesize = utils.format_filesize(model.size);
         item.find(".file_size").text(filesize || '\xA0');
-
-                // item.find(".new_text").text("hello");
-        document.getElementByClass("new_text").innerHTML = "New text!";
     };
 
 
