@@ -487,7 +487,7 @@ define([
             item = this.new_item(0);
             var span12 = item.children().first();
             span12.empty();
-            span12.append($('<div style="margin:auto;text-align:center;color:grey"/>').text(message));
+            span12.append($('<div style="margin:auto;text-align:center;color:red"/>').text(message));
         }
         var path = this.notebook_path;
         var offset = n_uploads;
