@@ -576,13 +576,6 @@ define([
             .addClass("col-md-12_nb")
             .appendTo(row);
 
-        var link = $("<a/>")
-            .addClass("item_link_nb")
-            .appendTo(item);
-
-        $("<span/>")
-            .addClass("item_name_nb")
-            .appendTo(link);
 
 
         var checkbox;
@@ -601,6 +594,15 @@ define([
         $('<i/>')
             .addClass('text_abc')
             .appendTo(item);
+
+        var link = $("<a/>")
+            .addClass("item_link_nb")
+            .appendTo(item);
+
+        $("<span/>")
+            .addClass("item_name_nb")
+            .appendTo(link);
+
 
         var div = $('<div/>')
             .addClass('pull-right')
