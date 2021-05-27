@@ -438,6 +438,7 @@ define([
             );
             breadcrumb.append(crumb);
         });
+        console.log(that.notebook_path)
         this.contents.list_contents(that.notebook_path).then(
             $.proxy(this.draw_notebook_list, this),
             function(error) {
@@ -897,7 +898,6 @@ define([
         item.data('modified', model.last_modified);
         item.data('type', model.type);
         item.find(".item_name_nb").text(bidi.applyBidi(model.name));
-        item.find(".item_name_nb_abc").text(bidi.applyBidi(model.name));
         var icon = NotebookList.icons[model.type];
         if (running) {
             icon = 'running_' + icon;
