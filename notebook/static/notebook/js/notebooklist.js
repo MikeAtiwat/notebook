@@ -591,7 +591,7 @@ define([
             .appendTo(item);
 
 
-        $('<i/>')
+        $('<p/>')
             .addClass('text_abc')
             .appendTo(item);
 
