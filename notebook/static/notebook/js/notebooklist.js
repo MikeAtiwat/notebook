@@ -576,13 +576,13 @@ define([
             .addClass("col-md-12_nb")
             .appendTo(row);
 
-        var link = $("<a/>")
-            .addClass("item_link_nb")
-            .appendTo(item);
+        // var link = $("<a/>")
+        //     .addClass("item_link_nb")
+        //     .appendTo(item);
 
-        // $("<span/>")
-        //     .addClass("item_name_nb")
-        //     .appendTo(link);
+        $("<a/>")
+            .addClass("item_name_nb")
+            .appendTo(item);
 
 
         var checkbox;
