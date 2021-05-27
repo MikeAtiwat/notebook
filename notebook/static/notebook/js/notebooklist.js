@@ -598,9 +598,17 @@ define([
         $("<span/>")
             .addClass("item_name_nb")
             .appendTo(link);
-        $('<p/>')
-            .addClass('text_abc')
-            .appendTo(link);
+
+
+        var link_abc = $("<a/>")
+            .addClass("item_link_nb_abc")
+            .appendTo(item);
+
+        $("<span/>")
+            .addClass("item_link_nb_abc")
+            .appendTo(link_abc);
+
+
 
         var div = $('<div/>')
             .addClass('pull-right')
@@ -889,7 +897,7 @@ define([
         item.data('modified', model.last_modified);
         item.data('type', model.type);
         item.find(".item_name_nb").text(bidi.applyBidi(model.name));
-        item.find(".tex_abc").text(bidi.applyBidi(model.name));
+        item.find(".item_name_nb_abc").text(bidi.applyBidi(model.name));
         var icon = NotebookList.icons[model.type];
         if (running) {
             icon = 'running_' + icon;
