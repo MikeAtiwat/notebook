@@ -106,7 +106,7 @@ a hack to deal with our current css styles and no new styling should be added in
   /*padding: 20px;*/
 }
 
-.sidebar a, .dropdown-container{
+.row{
   display: flex;
   align-items: center;
 }
