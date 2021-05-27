@@ -449,7 +449,7 @@ define([
 
     NotebookList.prototype.update_location = function (path) {
         this.notebook_path = path;
-        $('body').attr('data-notebook-path', path);
+        // $('body').attr('data-notebook-path', path);
         // Update the file tree list without reloading the page
         this.load_list();
         // Update the page title so the browser tab reflects it
