@@ -580,7 +580,7 @@ define([
         //     .addClass("item_link_nb")
         //     .appendTo(item);
 
-        $("<a/>")
+        $("<p/>")
             .addClass("item_name_nb")
             .appendTo(item);
 
