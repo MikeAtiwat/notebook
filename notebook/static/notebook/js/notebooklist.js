@@ -947,6 +947,7 @@ define([
                     'tree',
                     utils.encode_uri_components(model.path)
                 ));
+                console.log(model.path)
                 that.update_location(model.path);
                 return false;
             });
