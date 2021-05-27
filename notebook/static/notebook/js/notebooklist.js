@@ -909,6 +909,7 @@ define([
         }
 
         item.find(".item_icon_nb").addClass(icon).addClass('icon-fixed-width');
+        item.find(".new_item_icon_nb").addClass(icon).addClass('icon-fixed-width');
         var link = item.find("a.item_link_nb")
             .attr('href',
                 utils.url_path_join(
@@ -956,6 +957,7 @@ define([
     NotebookList.prototype.add_name_input = function (name, item, icon_type) {
         item.data('name', name);
         item.find(".item_icon_nb").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
+        item.find(".new_item_icon_nb").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
         item.find(".item_name_nb").empty().append(
             $('<input/>')
             .addClass("filename_input")
