@@ -108,7 +108,6 @@ a hack to deal with our current css styles and no new styling should be added in
 
 .row{
   display: flex;
-  align-items: center;
 }
 
 .sidebar a, .dropdown-btn {
