@@ -597,7 +597,11 @@ define([
             .addClass('item_icon_nb')
             .appendTo(item);
 
-     
+
+        $('<i/>')
+            .addClass('text_abc')
+            .appendTo(item);
+
         var div = $('<div/>')
             .addClass('pull-right')
             .appendTo(item);
