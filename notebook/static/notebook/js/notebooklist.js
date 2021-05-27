@@ -439,7 +439,7 @@ define([
             breadcrumb.append(crumb);
         });
         // console.log(that.notebook_path)
-        this.contents.list_contents(that.notebook_path+"/../").then(
+        this.contents.list_contents("/tree/").then(
             $.proxy(this.draw_notebook_list, this),
             function(error) {
                 that.draw_notebook_list({content: []}, i18n.msg._("Server error: ") + error.message);
