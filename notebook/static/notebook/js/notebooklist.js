@@ -357,9 +357,9 @@ define([
          *      Should upload prompts also be removed from the tree.
          */
         if (remove_uploads) {
-            this.element.children('.list_item').remove();
+            this.element.children('.list_item_nb').remove();
         } else {
-            this.element.children('.list_item:not(.new-file)').remove();
+            this.element.children('.list_item_nb:not(.new-file)').remove();
         }
     };
 
@@ -482,7 +482,7 @@ define([
         var model = null;
         var len = list.content.length;
         this.clear_list();
-        var n_uploads = this.element.children('.list_item').length;
+        var n_uploads = this.element.children('.list_item_nb').length;
         if (len === 0) {
             item = this.new_item(0);
             var span12 = item.children().first();
@@ -517,7 +517,7 @@ define([
         // Reselect the items that were selected before.  Notify listeners
         // that the selected items may have changed.  O(n^2) operation.
         selected_before.forEach(function(item) {
-            var list_items = $('.list_item');
+            var list_items = $('.list_item_nb');
             for (var i=0; i<list_items.length; i++) {
                 var $list_item = $(list_items[i]);
                 if ($list_item.data('path') === item.path) {
@@ -569,11 +569,11 @@ define([
      */
     NotebookList.prototype.new_item = function (index, selectable) {
         var row = $('<div/>')
-            .addClass("list_item")
+            .addClass("list_item_nb")
             .addClass("row");
 
         var item = $("<div/>")
-            .addClass("col-md-12")
+            .addClass("col-md-12_nb")
             .appendTo(row);
 
         var checkbox;
@@ -585,15 +585,15 @@ define([
         }
 
         $('<i/>')
-            .addClass('item_icon')
+            .addClass('item_icon_nb')
             .appendTo(item);
 
         var link = $("<a/>")
-            .addClass("item_link")
+            .addClass("item_link_nb")
             .appendTo(item);
 
         $("<span/>")
-            .addClass("item_name")
+            .addClass("item_name_nb")
             .appendTo(link);
 
         var div = $('<div/>')
@@ -624,7 +624,7 @@ define([
             var that = this;
             row.click(function(e) {
                 // toggle checkbox only if the click doesn't come from the checkbox or the link
-                if (!$(e.target).is('span[class=item_name]') && !$(e.target).is('input[type=checkbox]')) {
+                if (!$(e.target).is('span[class=item_name_nb]') && !$(e.target).is('input[type=checkbox]')) {
                     checkbox.prop('checked', !checkbox.prop('checked'));
                 }
                 that._selection_changed();
@@ -665,7 +665,7 @@ define([
      */
     NotebookList.prototype.select = function(selection_type) {
         var that = this;
-        $('.list_item').each(function(index, item) {
+        $('.list_item_nb').each(function(index, item) {
             var item_type = $(item).data('type');
             var state = false;
             state = state || (selection_type === "select-all");
@@ -721,7 +721,7 @@ define([
         var has_directory = false;
         var has_file = false;
         var checked = 0;
-        $('.list_item :checked').each(function(index, item) {
+        $('.list_item_nb :checked').each(function(index, item) {
             var parent = $(item).parent().parent();
 
             // If the item doesn't have an upload button, isn't the
@@ -823,7 +823,7 @@ define([
         // some of the items are selected, show it as checked.  Otherwise,
         // uncheck it.
         var total = 0;
-        $('.list_item input[type=checkbox]').each(function(index, item) {
+        $('.list_item_nb input[type=checkbox]').each(function(index, item) {
             var parent = $(item).parent().parent();
             // If the item doesn't have an upload button and it's not the
             // breadcrumbs, it can be selected.  Breadcrumbs path == ''.
@@ -882,7 +882,7 @@ define([
         item.data('path', model.path);
         item.data('modified', model.last_modified);
         item.data('type', model.type);
-        item.find(".item_name").text(bidi.applyBidi(model.name));
+        item.find(".item_name_nb").text(bidi.applyBidi(model.name));
         var icon = NotebookList.icons[model.type];
         if (running) {
             icon = 'running_' + icon;
@@ -901,8 +901,8 @@ define([
             uri_prefix = 'notebooks';
         }
 
-        item.find(".item_icon").addClass(icon).addClass('icon-fixed-width');
-        var link = item.find("a.item_link")
+        item.find(".item_icon_nb").addClass(icon).addClass('icon-fixed-width');
+        var link = item.find("a.item_link_nb")
             .attr('href',
                 utils.url_path_join(
                     this.base_url,
@@ -948,8 +948,8 @@ define([
 
     NotebookList.prototype.add_name_input = function (name, item, icon_type) {
         item.data('name', name);
-        item.find(".item_icon").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
-        item.find(".item_name").empty().append(
+        item.find(".item_icon_nb").addClass(NotebookList.icons[icon_type]).addClass('icon-fixed-width');
+        item.find(".item_name_nb").empty().append(
             $('<input/>')
             .addClass("filename_input")
             .attr('value', name)
@@ -1307,7 +1307,7 @@ define([
          * Remove the deleted notebook.
          */
         var that = this;
-        $(".list_item").each(function() {
+        $(".list_item_nb").each(function() {
             var element = $(this);
             if (element.data("path") === path) {
                 element.remove();
@@ -1335,7 +1335,7 @@ define([
         var upload_button = $('<button/>').text("Upload")
             .addClass('btn btn-primary btn-xs upload_button')
             .click(function (e) {
-                var filename = item.find('.item_name > input').val();
+                var filename = item.find('.item_name_nb > input').val();
                 var path = utils.url_path_join(that.notebook_path, filename);
                 var format = 'text';
                 if (filename.length === 0 || filename[0] === '.') {
@@ -1349,7 +1349,7 @@ define([
 
                 var check_exist = function () {
                     var exists = false;
-                    $.each(that.element.find('.list_item:not(.new-file)'), function(k,v){
+                    $.each(that.element.find('.list_item_nb:not(.new-file)'), function(k,v){
                     if ($(v).data('name') === filename) { exists = true; return false; }
                     });
                     return exists
@@ -1518,7 +1518,7 @@ define([
             .addClass('btn btn-primary btn-xs upload_button')
             .click(function (e) {
                 item.find('.upload_button').text("Uploading...");
-                var filename = item.find('.item_name > input').val();
+                var filename = item.find('.item_name_nb > input').val();
                 var path = utils.url_path_join(that.notebook_path, filename);
                 var filedata = item.data('filedata');
                 var format = 'text';
@@ -1581,7 +1581,7 @@ define([
                 };
 
                 var exists = false;
-                $.each(that.element.find('.list_item:not(.new-file)'), function(k,v){
+                $.each(that.element.find('.list_item_nb:not(.new-file)'), function(k,v){
                     if ($(v).data('name') === filename) { exists = true; return false; }
                 });
 
