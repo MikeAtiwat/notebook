@@ -591,8 +591,6 @@ define([
             .appendTo(item);
 
 
-
-
         var link = $("<a/>")
             .addClass("item_link_nb")
             .appendTo(item);
@@ -600,7 +598,7 @@ define([
         $("<span/>")
             .addClass("item_name_nb")
             .appendTo(link);
-        $('<span/>')
+        $('<p/>')
             .addClass('text_abc')
             .appendTo(link);
 
