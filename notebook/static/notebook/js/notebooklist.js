@@ -370,7 +370,7 @@ define([
 
     NotebookList.prototype.sessions_loaded = function(data){
         this.sessions = data;
-        this.load_list();
+        this.load_sessions();
     };
 
     NotebookList.prototype.load_list = function () {
@@ -577,7 +577,6 @@ define([
             .appendTo(row);
 
 
-
         var checkbox;
         if (selectable !== undefined) {
             checkbox = $('<input/>')
@@ -602,6 +601,12 @@ define([
         $('<i/>')
             .addClass('new_item_icon_nb')
             .appendTo(item);
+
+        $('<p/>')
+            .addClass('new_text')
+            .appendTo(item);
+
+        item.find(".new_text").text("hello");
      
         var div = $('<div/>')
             .addClass('pull-right')
