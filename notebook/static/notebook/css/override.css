@@ -81,7 +81,7 @@ a hack to deal with our current css styles and no new styling should be added in
 
 .item_link {
     margin-left: -1px;
-    vertical-align: -1px;
+    vertical-align: top;
     line-height: 22px;
 }
 
