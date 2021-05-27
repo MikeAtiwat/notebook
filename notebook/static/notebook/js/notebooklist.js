@@ -448,14 +448,15 @@ define([
     };
 
     NotebookList.prototype.update_location = function (path) {
-        // this.notebook_path = path;
-        // $('body').attr('data-notebook-path', path);
+        this.notebook_path = path;
+        $('body').attr('data-notebook-path', path);
         // Update the file tree list without reloading the page
         this.load_list();
         // Update the page title so the browser tab reflects it
         // Match how the title appears with a trailing slash or
         // "Home" if the page loads from the server.
         // $('title').text(path ? path+'/' : i18n.msg._("Home"));
+        
     };
 
     /**
@@ -940,13 +941,13 @@ define([
                 if(e.altKey || e.metaKey || e.shiftKey) {
                     return true;
                 }
-                window.history.pushState({
-                    path: model.path
-                }, model.path, utils.url_path_join(
-                    that.base_url,
-                    'tree',
-                    utils.encode_uri_components(model.path)
-                ));
+                // window.history.pushState({
+                //     path: model.path
+                // }, model.path, utils.url_path_join(
+                //     that.base_url,
+                //     'tree',
+                //     utils.encode_uri_components(model.path)
+                // ));
                 that.update_location(model.path);
                 return false;
             });
