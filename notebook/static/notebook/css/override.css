@@ -106,10 +106,10 @@ a hack to deal with our current css styles and no new styling should be added in
   /*padding: 20px;*/
 }
 
-.row{
+/*.row{
   display: flex;
 }
-
+*/
 .sidebar a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
