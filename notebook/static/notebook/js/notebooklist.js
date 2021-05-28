@@ -597,7 +597,7 @@ define([
             .addClass("item_link_nb")
             .appendTo(item);
 
-        $("<p/>")
+        $("<span/>")
             .addClass("item_name_nb")
             .appendTo(link);
 
