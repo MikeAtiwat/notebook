@@ -84,11 +84,16 @@ a hack to deal with our current css styles and no new styling should be added in
   width: 50px;
 }*/
 
-.item_link {
+.item_link_nb {
     margin-left: -1px;
     vertical-align: top;
     line-height: 22px;
     display: inline;
+}
+
+.item_name_nb {
+    display: inline;
+    font-size: 14px;
 }
 
 
