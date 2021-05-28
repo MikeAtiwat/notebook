@@ -43,8 +43,9 @@ define([
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
-        toolbar.ToolBar.apply(this, ['#tool_cell', options] );
-        this._make()
+
+        var toolbar = new toolbar.ToolBar('#tool_cell', options);
+        this._make(toolbar)
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
@@ -98,13 +99,14 @@ define([
     };
 
 
-    OutputArea.prototype._make = function () {
+    OutputArea.prototype._make = function (toolbar) {
+        this.toolbar = toolbar;
         var grps = [
           [
             ['jupyter-notebook:insert-cell-below'],
             'insert_above_below']
         ];
-        this.construct(grps);
+        this.toolbar.construct(grps);
     };
 
     /**
