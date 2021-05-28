@@ -45,7 +45,7 @@ define([
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
 
-        var toolbar = new toolcell.ToolCell('#maintoolbar-container', options);
+        var toolbar = new toolcell.ToolCell('#tool_cell', options);
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
