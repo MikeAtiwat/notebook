@@ -21,7 +21,7 @@ define([
      * @constructor
      */
 
-    var OutputArea = function (options) {
+    var OutputArea = function (notebook ,options) {
         this.config = options.config;
         this.selector = options.selector;
         this.events = options.events;
@@ -33,6 +33,7 @@ define([
         this.scroll_state = 'auto';
         this.trusted = true;
         this.clear_queued = null;
+        this.notebook = notebook;
         if (options.prompt_area === undefined) {
             this.prompt_area = true;
         } else {
@@ -100,7 +101,7 @@ define([
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
         this.tc_dis.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init();
-        var toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
+        var toolbar = new toolcell.ToolCell('#tool_cell', {notebook: this.notebook, actions: acts});
         this.expand();
     };
 

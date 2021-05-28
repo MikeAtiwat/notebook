@@ -202,7 +202,7 @@ define([
         var output = $('<div></div>');
         cell.append(input).append(output);
         this.element = cell;
-        this.output_area = new outputarea.OutputArea({
+        this.output_area = new outputarea.OutputArea(this.notebook,{
             config: this.config,
             selector: output,
             prompt_area: true,
