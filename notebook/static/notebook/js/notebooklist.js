@@ -740,7 +740,7 @@ define([
         var checked = 0;
         $('.list_item_nb :checked').each(function(index, item) {
             var parent = $(item).parent().parent();
-            console.log(parent)
+            // console.log(parent)
             // If the item doesn't have an upload button, isn't the
             // breadcrumbs and isn't the parent folder '..', then it can be selected.
             // Breadcrumbs path == ''.
@@ -759,7 +759,9 @@ define([
                 has_file = has_file || (parent.data('type') === 'file');
                 has_directory = has_directory || (parent.data('type') === 'directory');
             }
+            console.log(parent.data('path'))
         });
+
         this.selected = selected;
 
         // Rename is only visible when one item is selected, and it is not a running notebook
