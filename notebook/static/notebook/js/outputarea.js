@@ -43,7 +43,7 @@ define([
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
-        toolbar.ToolBar.apply(this, [selector, options] );
+        toolbar.ToolBar.apply(this, ['#tool_cell', options] );
         this.make()
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
