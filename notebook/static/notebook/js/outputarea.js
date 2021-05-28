@@ -75,7 +75,7 @@ define([
         this.collapse_button = $("<div/>");
         this.prompt_overlay = $("<div/>");
 
-        this.element.addClass("toolcell").attr('id','tool_cell');
+
         this.wrapper.append(this.prompt_overlay);
         this.wrapper.append(this.element);
         this.wrapper.append(this.collapse_button);
@@ -97,6 +97,7 @@ define([
         
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
+        this.element.addClass("toolcell").attr('id','tool_cell');
         this.expand();
     };
 
