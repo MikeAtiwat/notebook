@@ -11,7 +11,8 @@ define([
     'services/config',
     './toolbar',
     'notebook/js/toolcell',
-], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar, toolcell) {
+    'notebook/js/actions',
+], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar, toolcell, actions,) {
     "use strict";
 
     /**
@@ -44,8 +45,8 @@ define([
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
-
-        var toolbar = new toolcell.ToolCell('#tool_cell', options);
+        var acts = new actions.init();
+        var toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
