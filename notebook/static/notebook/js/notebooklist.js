@@ -690,6 +690,7 @@ define([
             state = state || (selection_type === "select-running-notebooks" && item_type === 'notebook' && that.sessions[$(item).data('path')] !== undefined);
             state = state || (selection_type === "select-files" && item_type === 'file');
             $(item).find('input[type=checkbox]').prop('checked', state);
+            console.log(state)
         });
         this._selection_changed();
     };
