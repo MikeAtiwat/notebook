@@ -95,7 +95,6 @@ define([
         
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
-        this.element.addClass('tool_cell');
         this.expand();
     };
 
@@ -385,6 +384,7 @@ define([
 
     OutputArea.prototype.create_output_area = function () {
         var oa = $("<div/>").addClass("output_area");
+        oa.append($('<div/>').addClass('tool_cell'));
         if (this.prompt_area) {
             oa.append($('<div/>').addClass('run_this_cell'));
             oa.append($('<div/>').addClass('prompt'));
