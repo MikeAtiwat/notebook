@@ -90,6 +90,7 @@ define([
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
         
+        this.element.addClass('toolbar_cell');
         this.expand();
     };
 

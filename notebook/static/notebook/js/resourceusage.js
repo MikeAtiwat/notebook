@@ -30,6 +30,17 @@ define([
                     .attr('title', 'Actively used Memory (updates every 5s)')
             )
         );
+        $('#maintoolbar-container').append(
+            $('<div>').attr('id', 'jupyter-resource-usage-display')
+                .addClass('btn-group')
+                .addClass('pull-right')
+                .append(
+                    $('<strong>').text('CPU: ')
+                ).append(
+                $('<span>').attr('id', 'jupyter-resource-usage-cpu')
+                    .attr('title', 'Actively used CPU (updates every 5s)')
+            )
+        );
         // FIXME: Do something cleaner to get styles in here?
         $('head').append(
             $('<style>').html('.jupyter-resource-usage-warn { background-color: #FFD2D2; color: #D8000C; }')
@@ -55,7 +66,10 @@ define([
                 totalMemoryUsage = humanFileSize(data['rss']);
 
                 var limits = data['limits'];
+                var totalCpuUsage = data['cpu_percent'];
                 var display = totalMemoryUsage;
+                var display_cpu = totalCpuUsage;
+
 
                 if (limits['memory']) {
                     if (limits['memory']['rss']) {
@@ -70,6 +84,7 @@ define([
                 }
 
                 $('#jupyter-resource-usage-mem').text(display);
+                $('#jupyter-resource-usage-cpu').text(display_cpu);
             }
         });
     };
