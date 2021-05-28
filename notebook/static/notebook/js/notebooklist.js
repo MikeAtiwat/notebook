@@ -690,7 +690,7 @@ define([
             state = state || (selection_type === "select-running-notebooks" && item_type === 'notebook' && that.sessions[$(item).data('path')] !== undefined);
             state = state || (selection_type === "select-files" && item_type === 'file');
             $(item).find('input[type=checkbox]').prop('checked', state);
-            console.log(state)
+            // console.log(state)
         });
         this._selection_changed();
     };
@@ -740,7 +740,7 @@ define([
         var checked = 0;
         $('.list_item_nb :checked').each(function(index, item) {
             var parent = $(item).parent().parent();
-
+            console.log(parent)
             // If the item doesn't have an upload button, isn't the
             // breadcrumbs and isn't the parent folder '..', then it can be selected.
             // Breadcrumbs path == ''.
