@@ -817,7 +817,7 @@ class NotebookApp(JupyterApp):
         help= ("Reload the webapp when changes are made to any Python src files.")
     )
 
-    default_url = Unicode('/tree', config=True,
+    default_url = Unicode('/notebook', config=True,
         help=_("The default URL to redirect to from `/`")
     )
 
