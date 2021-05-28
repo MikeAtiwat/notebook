@@ -487,9 +487,9 @@ define([
             // Unforce RTL
             subarea.attr("dir","auto");
             toinsert.append(subarea);
+            toinsert.append(tc);
             this._append_javascript_error(err, subarea);
             this.element.append(toinsert);
-            this.element.append(tc);
         }
 
         // Notify others of changes.
