@@ -9,7 +9,8 @@ define([
     'base/js/keyboard',
     'base/js/markdown',
     'services/config',
-], function($, utils, i18n, security, keyboard, markdown, configmod) {
+    './toolbar',
+], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar) {
     "use strict";
 
     /**
@@ -37,6 +38,7 @@ define([
         }
         this._display_id_targets = {};
         this.create_elements();
+        this.create_tool_elements();
         this.style();
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
@@ -53,8 +55,13 @@ define([
      * Class prototypes
      **/
 
+    OutputArea.prototype.create_tool_elements = function () {
+    var element = this.element = $("<div/>").addClass("tool_cell_container");
+    }
+
     OutputArea.prototype.create_elements = function () {
         var element = this.element = $("<div/>");
+        this.element.addClass('output');
         // wrap element in safe trigger,
         // so that errors (e.g. in widget extensions) are logged instead of
         // breaking everything.
@@ -90,7 +97,6 @@ define([
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
         
-        this.element.addClass('toolbar_cell');
         this.expand();
     };
 
