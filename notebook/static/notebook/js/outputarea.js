@@ -43,7 +43,8 @@ define([
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
-
+        toolbar.ToolBar.apply(this, [selector, options] );
+        this.make()
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
@@ -54,10 +55,6 @@ define([
     /**
      * Class prototypes
      **/
-
-    OutputArea.prototype.create_tool_elements = function () {
-    var element = this.element = $("<div/>").addClass("tool_cell_container");
-    }
 
     OutputArea.prototype.create_elements = function () {
         var element = this.element = $("<div/>");
@@ -96,8 +93,18 @@ define([
         
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
-        
+        this.element.addClass('tool_cell');
         this.expand();
+    };
+
+
+    OutputArea.prototype._make = function () {
+        var grps = [
+          [
+            ['jupyter-notebook:insert-cell-below'],
+            'insert_above_below']
+        ];
+        this.construct(grps);
     };
 
     /**
