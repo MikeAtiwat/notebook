@@ -580,13 +580,13 @@ define([
 
 
 
-        var checkbox;
-        if (selectable !== undefined) {
-            checkbox = $('<input/>')
-                .attr('type', 'checkbox')
-                .attr('title', i18n.msg._('Click here to rename, delete, etc.'))
-                .appendTo(item);
-        }
+        // var checkbox;
+        // if (selectable !== undefined) {
+        //     checkbox = $('<input/>')
+        //         .attr('type', 'checkbox')
+        //         .attr('title', i18n.msg._('Click here to rename, delete, etc.'))
+        //         .appendTo(item);
+        // }
 
         $('<i/>')
             .addClass('item_icon_nb')
