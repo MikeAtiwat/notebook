@@ -46,7 +46,7 @@ define([
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
         var acts = new actions.init();
-        var toolbar = new toolcell.ToolCell('div#tool_cell', {actions: acts});
+        var toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
@@ -384,7 +384,7 @@ define([
 
     OutputArea.prototype.create_output_area = function () {
         var oa = $("<div/>").addClass("output_area");
-        oa.append($('<div/>').addClass('tool_cell'));
+        oa.append($('<div/>').addClass('toolcell').addattr('id','tool_cell'));
         if (this.prompt_area) {
             oa.append($('<div/>').addClass('run_this_cell'));
             oa.append($('<div/>').addClass('prompt'));
