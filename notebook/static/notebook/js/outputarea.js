@@ -74,6 +74,8 @@ define([
         }
         this.collapse_button = $("<div/>");
         this.prompt_overlay = $("<div/>");
+
+        var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
         this.wrapper.append(this.prompt_overlay);
         this.wrapper.append(this.element);
         this.wrapper.append(this.collapse_button);
@@ -483,11 +485,9 @@ define([
             // the prompt area and the proper indentation.
             toinsert = this.create_output_area();
             var subarea = $('<div/>').addClass('output_subarea');
-            var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
             // Unforce RTL
             subarea.attr("dir","auto");
             toinsert.append(subarea);
-            toinsert.append(tc);
             this._append_javascript_error(err, subarea);
             this.element.append(toinsert);
         }
