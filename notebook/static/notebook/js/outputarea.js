@@ -45,8 +45,7 @@ define([
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
-        var acts = new actions.init();
-        var toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
+        this.acts = new actions.init();
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
@@ -100,6 +99,7 @@ define([
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
         this.tc_dis.addClass("toolcell").attr('id','tool_cell');
+        this.toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
         this.expand();
     };
 
