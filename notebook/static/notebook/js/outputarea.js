@@ -75,7 +75,7 @@ define([
         this.collapse_button = $("<div/>");
         this.prompt_overlay = $("<div/>");
 
-        var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
+        this.element.addClass("toolcell").attr('id','tool_cell');
         this.wrapper.append(this.prompt_overlay);
         this.wrapper.append(this.element);
         this.wrapper.append(this.collapse_button);
