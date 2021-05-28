@@ -10,7 +10,8 @@ define([
     'base/js/markdown',
     'services/config',
     './toolbar',
-], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar) {
+    'notebook/js/maintoolbar',
+], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar, maintoolbar) {
     "use strict";
 
     /**
@@ -44,8 +45,7 @@ define([
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
 
-        var toolbar = new toolbar.ToolBar('#tool_cell', options);
-        this._make(toolbar)
+        var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', options);
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
@@ -99,15 +99,15 @@ define([
     };
 
 
-    OutputArea.prototype._make = function (toolbar) {
-        this.toolbar = toolbar;
-        var grps = [
-          [
-            ['jupyter-notebook:insert-cell-below'],
-            'insert_above_below']
-        ];
-        this.toolbar.construct(grps);
-    };
+    // OutputArea.prototype._make = function (toolbar) {
+    //     this.toolbar = toolbar;
+    //     var grps = [
+    //       [
+    //         ['jupyter-notebook:insert-cell-below'],
+    //         'insert_above_below']
+    //     ];
+    //     this.toolbar.construct(grps);
+    // };
 
     /**
      * Should the OutputArea scroll?
