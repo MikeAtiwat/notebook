@@ -44,7 +44,7 @@ define([
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
         toolbar.ToolBar.apply(this, ['#tool_cell', options] );
-        this.make()
+        this._make()
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
