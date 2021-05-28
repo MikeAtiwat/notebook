@@ -88,7 +88,7 @@ a hack to deal with our current css styles and no new styling should be added in
     margin-left: -1px;
     vertical-align: top;
     line-height: 22px;
-    display: flex;
+    display: inline;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
