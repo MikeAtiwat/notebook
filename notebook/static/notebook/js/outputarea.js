@@ -99,7 +99,7 @@ define([
         this.prompt_overlay.addClass('out_prompt_overlay prompt');
         this.prompt_overlay.attr('title', i18n.msg._('click to expand output; double click to hide output'));
         this.tc_dis.addClass("toolcell").attr('id','tool_cell');
-        this.toolbar = new toolcell.ToolCell('#tool_cell', {actions: acts});
+        this.toolbar = new toolcell.ToolCell('#tool_cell', {actions: this.acts});
         this.expand();
     };
 
