@@ -38,7 +38,7 @@ define([
         }
         this._display_id_targets = {};
         this.create_elements();
-        this.create_tool_elements();
+        // this.create_tool_elements();
         this.style();
         this.bind_events();
         this.class_config = new configmod.ConfigWithDefaults(this.config,
