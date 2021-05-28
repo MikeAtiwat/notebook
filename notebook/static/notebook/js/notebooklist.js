@@ -634,18 +634,18 @@ define([
             .addClass("pull-right")
             .appendTo(div2);
 
-        if (selectable === false) {
-            checkbox.css('visibility', 'hidden');
-        } else if (selectable === true) {
-            var that = this;
-            row.click(function(e) {
-                // toggle checkbox only if the click doesn't come from the checkbox or the link
-                if (!$(e.target).is('span[class=item_name_nb]') && !$(e.target).is('input[type=checkbox]')) {
-                    checkbox.prop('checked', !checkbox.prop('checked'));
-                }
-                that._selection_changed();
-            });
-        }
+        // if (selectable === false) {
+        //     checkbox.css('visibility', 'hidden');
+        // } else if (selectable === true) {
+        //     var that = this;
+        //     row.click(function(e) {
+        //         // toggle checkbox only if the click doesn't come from the checkbox or the link
+        //         if (!$(e.target).is('span[class=item_name_nb]') && !$(e.target).is('input[type=checkbox]')) {
+        //             checkbox.prop('checked', !checkbox.prop('checked'));
+        //         }
+        //         that._selection_changed();
+        //     });
+        // }
 
         $('<div/>')
             .addClass('running-indicator')
