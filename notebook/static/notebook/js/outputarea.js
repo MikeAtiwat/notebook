@@ -10,8 +10,8 @@ define([
     'base/js/markdown',
     'services/config',
     './toolbar',
-    'notebook/js/maintoolbar',
-], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar, maintoolbar) {
+    'notebook/js/toolcell',
+], function($, utils, i18n, security, keyboard, markdown, configmod, toolbar, toolcell) {
     "use strict";
 
     /**
@@ -45,7 +45,7 @@ define([
         this.class_config = new configmod.ConfigWithDefaults(this.config,
                                         OutputArea.config_defaults, 'OutputArea');
 
-        var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', options);
+        var toolbar = new toolcell.ToolCell('#maintoolbar-container', options);
         this.handle_appended = utils.throttle(this.handle_appended.bind(this));
     };
 
