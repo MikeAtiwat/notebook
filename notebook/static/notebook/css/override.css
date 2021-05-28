@@ -91,6 +91,8 @@ a hack to deal with our current css styles and no new styling should be added in
     display: inline;
 }
 
+
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-right .5s; /* If you want a transition effect */
@@ -121,7 +123,7 @@ a hack to deal with our current css styles and no new styling should be added in
   text-decoration: none;
   font-size: 20px;
   color: #ffffff;
-  display: block;
+  display: inline;
   border: none;
   background: none;
   width:100%;
