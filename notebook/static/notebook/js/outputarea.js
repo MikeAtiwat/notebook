@@ -382,14 +382,13 @@ define([
         this.element.trigger('resizeOutput', {output_area: this});
     };
 
-    OutputArea.prototype.create_tool_cell = function () {
-        var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
-        return tc;
-    };
+    // OutputArea.prototype.create_tool_cell = function () {
+    //     var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
+    //     return tc;
+    // };
 
     OutputArea.prototype.create_output_area = function () {
         var oa = $("<div/>").addClass("output_area");
-        oa.append($('<div/>').addClass('toolcell').attr('id','tool_cell'));
         if (this.prompt_area) {
             oa.append($('<div/>').addClass('run_this_cell'));
             oa.append($('<div/>').addClass('prompt'));
@@ -483,14 +482,14 @@ define([
             // Create an actual output_area and output_subarea, which creates
             // the prompt area and the proper indentation.
             toinsert = this.create_output_area();
-            var tc_element = this.create_tool_cell();
             var subarea = $('<div/>').addClass('output_subarea');
+            var tc = $("<div/>").addClass("toolcell").attr('id','tool_cell');
             // Unforce RTL
             subarea.attr("dir","auto");
             toinsert.append(subarea);
             this._append_javascript_error(err, subarea);
             this.element.append(toinsert);
-            this.element.append(tc_element);
+            this.element.append(tc);
         }
 
         // Notify others of changes.
