@@ -185,7 +185,9 @@ define([
      */
     Cell.prototype._on_click = function (event) {
         console.log(event)
-
+        if(event === {}){
+            console.log(true)
+        }
         if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
         {
             return
