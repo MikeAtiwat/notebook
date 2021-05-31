@@ -46,11 +46,47 @@ define([
 
     ToolCell.prototype._make = function () {
         var grps = [
-   
+          [
+            ['jupyter-notebook:save-notebook'],
+            'save-notbook'
+          ],
+          [
+            ['jupyter-notebook:save-notebook'],
+            'save-notbook'
+          ],
+          [
+            ['jupyter-notebook:save-notebook'],
+            'save-notbook'
+          ],
+          [
+            ['jupyter-notebook:save-notebook', 'jupyter-notebook:insert-cell-below', 'jupyter-notebook:save-notebook'],
+            'save-notbook'
+          ],
           [
             ['jupyter-notebook:insert-cell-below'],
             'insert_above_below'],
- 
+          [
+            ['jupyter-notebook:cut-cell',
+             'jupyter-notebook:copy-cell',
+             'jupyter-notebook:paste-cell-below'
+            ] ,
+            'cut_copy_paste'],
+          [
+            ['jupyter-notebook:move-cell-up',
+             'jupyter-notebook:move-cell-down'
+            ],
+            'move_up_down'],
+          [ [new toolbar.Button('jupyter-notebook:run-cell-and-select-next',
+                {label: i18n.msg._('Run')}),
+             'jupyter-notebook:interrupt-kernel',
+             'jupyter-notebook:confirm-restart-kernel',
+             'jupyter-notebook:confirm-restart-kernel-and-run-all-cells'
+            ],
+            'run_int'],
+         ['<add_celltype_list>'],
+         [
+           ['jupyter-notebook:show-command-palette'],
+           'cmd_palette']
         ];
         this.construct(grps);
     };
