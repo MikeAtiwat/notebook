@@ -184,8 +184,8 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        console.log(event.target)
-        console.log(event.target == "tool_cell")
+        console.log(event.target.class)
+        console.log(event.target.class == "fa")
         if (!this.selected) {
             this.events.trigger('select.Cell', {'cell':this, 'extendSelection':event.shiftKey});
         } else {
