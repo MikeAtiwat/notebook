@@ -925,7 +925,7 @@ define([
                 var handler = _prepare_handler(final_actions, k, _actions);
                 (function(key, handler){
                     final_actions['jupyter-notebook:'+key].handler = function(env, event){
-                        console.log(env)
+                        // console.log(env)
                         handler(env);
                         if(event){
                             event.preventDefault();
