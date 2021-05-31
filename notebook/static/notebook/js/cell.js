@@ -184,7 +184,7 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        if (this.className == "tool_cell") {
+        if (this.element.className == "tool_cell") {
             return
         }
         if (!this.selected) {
