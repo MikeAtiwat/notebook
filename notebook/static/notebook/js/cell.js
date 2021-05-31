@@ -185,7 +185,7 @@ define([
      */
     Cell.prototype._on_click = function (event) {
         console.log(event.target.tagName)
-        console.log(event.target.tagName == "i")
+        console.log(event.target.tagName == "I")
         if (!this.selected) {
             this.events.trigger('select.Cell', {'cell':this, 'extendSelection':event.shiftKey});
         } else {
