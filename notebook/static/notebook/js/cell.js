@@ -184,10 +184,8 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        // console.log(event.target.tagName)
-        if (event.target.contains("tagName")){
-            console.log(event.target.tagName)
-        }
+        console.log(event.target.className)
+
         if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
         {
             return
