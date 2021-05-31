@@ -219,12 +219,12 @@ define([
             keyboard_manager: this.keyboard_manager,
         });
         this.completer = new completer.Completer(this, this.events);
-        
+
         var tc = $('<div></div>');
         tc.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init({notebook:this.notebook});
         this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
-        output_area.append(tc);
+        this.output_area.append(tc);
     };
 
     /** @method bind_events */
