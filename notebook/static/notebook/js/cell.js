@@ -194,7 +194,7 @@ define([
             this.events.trigger('select.Cell', {'cell': this});
         }
 
-        this.getElementById("tool_cell").disabled = true;
+        this.element.getElementById("tool_cell").disabled = true;
 
         if(typeof event.target !== "undefined"){
         if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
