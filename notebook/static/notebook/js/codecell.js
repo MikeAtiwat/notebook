@@ -211,7 +211,8 @@ define([
         tc.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init({notebook:this.notebook});
         this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
-        cell.append(input).append(output).append(tc);
+        inner_cell.append(tc);
+        cell.append(input).append(output);
 
         this.element = cell;
         this.output_area = new outputarea.OutputArea(this.notebook,{
