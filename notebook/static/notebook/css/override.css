@@ -97,11 +97,11 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 .tc_prompt {
-    height: 112%;
+    height: 1px;
     padding: 0px 0.4em;
     position: absolute;
     border-radius: 2px;
-    min-width: 15px
+    min-width: 15ex;
 }
 
 /*#toolcell {
