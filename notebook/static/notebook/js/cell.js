@@ -189,7 +189,7 @@ define([
         if(typeof event.target !== "undefined"){
         if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
         {
-            return
+            this.events.trigger('select.Cell', {'cell': this});
         }
         }    
         if (!this.selected) {
