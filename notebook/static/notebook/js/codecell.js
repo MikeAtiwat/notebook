@@ -207,8 +207,16 @@ define([
 
         var output = $('<div></div>');
 
+        var tc_prompt = $('<div/>').addClass('prompt tc_prompt');
+        var tc = $('<div></div>');
+        tc.append(tc_prompt);
+        tc.addClass("toolcell").attr('id','tool_cell');
+        var acts = new actions.init({notebook:this.notebook});
+        this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
+        this.output_area.append(tc);
 
         cell.append(input).append(output);
+
 
         this.element = cell;
         this.output_area = new outputarea.OutputArea(this.notebook,{
@@ -220,11 +228,6 @@ define([
         });
         this.completer = new completer.Completer(this, this.events);
 
-        var tc = $('<div></div>');
-        tc.addClass("toolcell").attr('id','tool_cell');
-        var acts = new actions.init({notebook:this.notebook});
-        this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
-        this.output_area.append(tc);
     };
 
     /** @method bind_events */
