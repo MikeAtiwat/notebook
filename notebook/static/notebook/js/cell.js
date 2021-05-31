@@ -184,7 +184,7 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        // console.log(event.target)
+        console.log(this.element)
         // console.log(typeof event.target=="undefined")
 
         if (!this.selected) {
