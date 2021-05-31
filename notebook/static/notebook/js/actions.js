@@ -389,6 +389,18 @@ define([
                 env.notebook.focus_cell();
             }
         },
+        'insert-markdown-below' : {
+            cmd: i18n.msg._('insert cell below'),
+            help: i18n.msg._('insert cell below'),
+            icon : 'fa-plus',
+            help_index : 'ed',
+            handler : function (env) {
+                env.notebook.insert_cell_below();
+                env.notebook.select_next(true);
+                env.notebook.focus_cell();
+                env.notebook.cells_to_markdown();
+            }
+        },
         'insert-select-cell-below' : {
             cmd: i18n.msg._('insert cell below'),
             help: i18n.msg._('insert cell below'),
