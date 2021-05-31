@@ -186,18 +186,20 @@ define([
     Cell.prototype._on_click = function (event) {
         // console.log(event.target)
         // console.log(typeof event.target=="undefined")
-        if(typeof event.target !== "undefined"){
-        if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
-        {
-            this.events.trigger('select.Cell', {'cell': this});
-        }
-        }    
+
         if (!this.selected) {
             this.events.trigger('select.Cell', {'cell':this, 'extendSelection':event.shiftKey});
         } else {
             // I'm already part of the selection; contract selection to just me
             this.events.trigger('select.Cell', {'cell': this});
         }
+
+        if(typeof event.target !== "undefined"){
+        if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
+        {
+            this.notebook.select_next(true);
+        }
+        }    
     };
 
     /**
