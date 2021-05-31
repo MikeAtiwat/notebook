@@ -407,6 +407,8 @@ define([
             icon : 'fa-plus',
             help_index : 'ed',
             handler : function (env) {
+                var index = env.notebook.get_selected_index();
+                var index = env.notebook.get_anchor_index();
                 env.notebook.insert_cell_below();
                 env.notebook.select_next(true);
                 env.notebook.focus_cell();
