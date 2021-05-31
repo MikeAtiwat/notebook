@@ -96,6 +96,13 @@ a hack to deal with our current css styles and no new styling should be added in
     font-size: 14px;
 }
 
+div.tc_prompt {
+    height: 112%;
+    padding: 0px 0.4em;
+    position: absolute;
+    border-radius: 2px;
+}
+
 #toolcell {
     margin-left: 13px;
 }
