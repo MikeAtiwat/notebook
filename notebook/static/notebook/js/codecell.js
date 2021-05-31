@@ -461,7 +461,7 @@ define([
     // Basic cell manipulation.
 
     CodeCell.prototype.select = function () {
-        console.log(this)
+        this.element.getElementById("tool_cell").disabled = true;
         var cont = Cell.prototype.select.apply(this, arguments);
         if (cont) {
             this.code_mirror.refresh();
