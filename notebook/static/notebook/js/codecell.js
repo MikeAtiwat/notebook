@@ -208,6 +208,7 @@ define([
         var output = $('<div></div>');
 
         var tc = $('<div></div>');
+        tc.append(prompt)
         tc.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init({notebook:this.notebook});
         this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
