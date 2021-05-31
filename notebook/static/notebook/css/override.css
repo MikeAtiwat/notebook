@@ -96,14 +96,8 @@ a hack to deal with our current css styles and no new styling should be added in
     font-size: 14px;
 }
 
-#tool_cell {
-    margin-bottom: -3px;
-    margin-top: -8px;
-    border: 0px;
-    min-height: 40px;
-    margin-left: 0px;
-    padding-top: 11px;
-    padding-bottom: 3px;
+#toolcell {
+    margin-left: 13px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
