@@ -96,16 +96,17 @@ a hack to deal with our current css styles and no new styling should be added in
     font-size: 14px;
 }
 
-div.tc_prompt {
+.tc_prompt {
     height: 112%;
     padding: 0px 0.4em;
     position: absolute;
     border-radius: 2px;
+    min-width: 15px
 }
 
-#toolcell {
+/*#toolcell {
     margin-left: 13px;
-}
+}*/
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
