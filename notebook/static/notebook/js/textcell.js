@@ -161,7 +161,13 @@ define([
         // The tabindex=-1 makes this div focusable.
         var render_area = $('<div/>').addClass('text_cell_render rendered_html')
             .attr('tabindex','-1');
-        inner_cell.append(input_area).append(render_area);
+
+        var tc = $('<div></div>');
+        tc.addClass("toolcell").attr('id','tool_cell');
+        var acts = new actions.init({notebook:this.notebook});
+        this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
+
+        inner_cell.append(input_area).append(render_area).append(tc);
         cell.append(inner_cell);
         this.element = cell;
         this.inner_cell = inner_cell;
