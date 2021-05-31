@@ -22,7 +22,9 @@ define([
     'notebook/js/celltoolbar',
     'codemirror/lib/codemirror',
     'codemirror/mode/python/python',
-    'notebook/js/codemirror-ipython'
+    'notebook/js/codemirror-ipython',
+    'notebook/js/toolcell',
+    'notebook/js/actions'
 ], function(
     $,
     IPython,
@@ -36,7 +38,9 @@ define([
     celltoolbar,
     CodeMirror,
     cmpython,
-    cmip
+    cmip,
+    toolcell, 
+    actions
     ) {
     "use strict";
     
@@ -200,7 +204,12 @@ define([
         input.append(prompt_container).append(inner_cell);
 
         var output = $('<div></div>');
-        cell.append(input).append(output);
+
+        var tc = $('<div></div>');
+        tc.addClass("toolcell").attr('id','tool_cell');
+
+        cell.append(input).append(output).append(tc);
+
         this.element = cell;
         this.output_area = new outputarea.OutputArea(this.notebook,{
             config: this.config,
@@ -210,6 +219,8 @@ define([
             keyboard_manager: this.keyboard_manager,
         });
         this.completer = new completer.Completer(this, this.events);
+        var acts = new actions.init();
+        this.toolbar = new toolcell.ToolCell('#tool_cell', {notebook: this.notebook, actions: acts, events: this.events});
     };
 
     /** @method bind_events */
