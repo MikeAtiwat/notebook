@@ -184,7 +184,7 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        console.log(this.element)
+        console.log(this.element.children)
         // console.log(typeof event.target=="undefined")
 
         if (!this.selected) {
@@ -194,7 +194,7 @@ define([
             this.events.trigger('select.Cell', {'cell': this});
         }
 
-        this.element.getElementById("tool_cell").disabled = true;
+        // this.element.getElementById("tool_cell").disabled = true;
 
         if(typeof event.target !== "undefined"){
         if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
