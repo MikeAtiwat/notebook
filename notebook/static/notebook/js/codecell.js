@@ -24,7 +24,8 @@ define([
     'codemirror/mode/python/python',
     'notebook/js/codemirror-ipython',
     'notebook/js/toolcell',
-    'notebook/js/actions'
+    'notebook/js/actions',
+    'base/js/events'
 ], function(
     $,
     IPython,
@@ -40,7 +41,8 @@ define([
     cmpython,
     cmip,
     toolcell, 
-    actions
+    actions,
+    events
     ) {
     "use strict";
     
