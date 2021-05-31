@@ -184,8 +184,8 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        console.log(event)
-        console.log(event.target.age.value)
+        console.log(event.target)
+        console.log(event.currentTarget)
         // if(event != {}){
         // if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
         // {
