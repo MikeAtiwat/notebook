@@ -184,13 +184,13 @@ define([
      * We **might** be able to move that to notebook `handle_edit_mode`.
      */
     Cell.prototype._on_click = function (event) {
-        console.log(event.target)
-        console.log(typeof event.target=="undefined")
-        // if(event != {}){
-        // if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
-        // {
-        //     return
-        // }
+        // console.log(event.target)
+        // console.log(typeof event.target=="undefined")
+        if(typeof event.target !=="undefined"){
+        if (event.target.tagName == "I" | event.target.tagName == "BUTTON")
+        {
+            return
+        }
         // }    
         if (!this.selected) {
             this.events.trigger('select.Cell', {'cell':this, 'extendSelection':event.shiftKey});
