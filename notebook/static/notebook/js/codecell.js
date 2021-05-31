@@ -208,8 +208,8 @@ define([
         var tc = $('<div></div>');
         tc.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init();
-        this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: this.events});
-        
+        this.toolbar = new toolcell.ToolCell('#tool_cell', {notebook: this.notebook, actions: acts, events: this.events});
+
         cell.append(input).append(output).append(tc);
 
         this.element = cell;
