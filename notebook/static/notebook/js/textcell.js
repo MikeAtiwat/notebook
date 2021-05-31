@@ -12,7 +12,10 @@ define([
     'codemirror/lib/codemirror',
     'codemirror/mode/gfm/gfm',
     'notebook/js/codemirror-ipythongfm',
-    'bidi/bidi'
+    'bidi/bidi',
+    'notebook/js/toolcell',
+    'notebook/js/actions',
+    'base/js/events'
 ], function(
     $,
     utils,
@@ -24,7 +27,10 @@ define([
     CodeMirror,
     gfm,
     ipgfm,
-    bidi
+    bidi,
+    toolcell, 
+    actions,
+    events
     ) {
     "use strict";
     function encodeURIandParens(uri){return encodeURI(uri).replace('(','%28').replace(')','%29')}
