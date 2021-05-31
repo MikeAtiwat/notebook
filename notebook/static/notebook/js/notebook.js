@@ -891,9 +891,7 @@ define([
     Notebook.prototype.select_next = function (moveanchor) {
 
         var index = this.get_selected_index();
-        console.log(index)
         this.select(index+1, moveanchor);
-        console.log(index+1)
         return this;
     };
 
