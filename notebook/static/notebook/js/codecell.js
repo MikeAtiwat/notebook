@@ -467,9 +467,9 @@ define([
     CodeCell.prototype.select = function () {
         console.log(this.element[0].children["tool_cell"].children["insert_above_below"])
         var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
-
-        button_group.children[0].disabled = true;
-        button_group.children[0].disabled = true;
+        button_group.find('*').attr('disabled', true);
+        // button_group.children[0].disabled = true;
+        // button_group.children[1].disabled = true;
         // var button = this.element[0].children["tool_cell"].children["insert_above_below"];
         // button.disabled = true;
         
