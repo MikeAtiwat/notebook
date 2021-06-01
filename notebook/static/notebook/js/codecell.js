@@ -465,7 +465,7 @@ define([
     // Basic cell manipulation.
 
     CodeCell.prototype.select = function () {
-        console.log(this.element[0].children[2].children[1])
+        console.log(this.element[0].children[2].children["insert_above_below"])
         
         var cont = Cell.prototype.select.apply(this, arguments);
         if (cont) {
