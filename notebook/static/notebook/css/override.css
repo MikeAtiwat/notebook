@@ -109,6 +109,10 @@ a hack to deal with our current css styles and no new styling should be added in
     display: inline;
 }
 
+.btn-group {
+    display: inline;
+}
+
 /*#toolcell {
     margin-left: 13px;
 }*/
