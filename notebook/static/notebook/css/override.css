@@ -110,12 +110,12 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 div.cell.selected {
-    border-radius: 25px;
-    width: 10px;
+    border-radius: 10px;
+    /*width: 5px;*/
 }
 
 div.cell.rendered {
-    border-radius: 25px;
+    border-radius: 10px;
 }
 /*
 div.cell {
@@ -123,7 +123,7 @@ div.cell {
 }*/
 
 #notebook-container {
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 /*#toolcell {
