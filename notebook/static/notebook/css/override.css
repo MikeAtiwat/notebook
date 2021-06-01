@@ -117,10 +117,10 @@ div.cell.selected {
 div.cell.rendered {
     border-radius: 25px;
 }
-
+/*
 div.cell {
   overflow: hidden;
-}
+}*/
 
 #notebook-container {
     border-radius: 25px;
