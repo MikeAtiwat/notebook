@@ -60,7 +60,8 @@ a hack to deal with our current css styles and no new styling should be added in
   background-color: #444;
   color: white;
   padding: 10px 15px;
-  border: none;
+  border: hidden;
+  border-radius: 15px;
 }
 
 .openbtn:hover {
