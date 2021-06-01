@@ -186,7 +186,7 @@ define([
     Cell.prototype._on_click = function (event) {
         // console.log(this.element.children)
         // console.log(typeof event.target=="undefined")
-        $('#selected').children().off('click');
+        // $('#selected').children().off('click');
 
         if (!this.selected) {
             this.events.trigger('select.Cell', {'cell':this, 'extendSelection':event.shiftKey});

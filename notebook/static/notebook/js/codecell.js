@@ -207,8 +207,9 @@ define([
 
         var output = $('<div></div>');
 
-        var tc_prompt = $('<div/>').addClass('tc_prompt');
+       
         var tc = $('<div></div>');
+         var tc_prompt = $('<div/>').addClass('tc_prompt');
         tc.append(tc_prompt);
         tc.addClass("toolcell").attr('id','tool_cell');
         var acts = new actions.init({notebook:this.notebook});
