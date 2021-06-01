@@ -230,7 +230,7 @@ define([
         var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
 
         button_group.children[0].disabled = true;
-        button_group.children[1].attr("display", "none")
+        button_group.children[1].attr("display") = "none";
     };
 
     /** @method bind_events */
