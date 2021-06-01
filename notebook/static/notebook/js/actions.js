@@ -907,7 +907,7 @@ define([
             cmd: i18n.msg._('save notebook'),
             help: i18n.msg._("Save and Checkpoint"),
             help_index : 'fb',
-            icon: 'fa-save',
+            icon: 'fa-snowflake-o',
             handler : function (env, event) {
                 env.notebook.save_checkpoint();
                 if(event){
