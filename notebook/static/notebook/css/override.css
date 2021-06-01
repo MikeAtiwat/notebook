@@ -109,6 +109,10 @@ a hack to deal with our current css styles and no new styling should be added in
     display: inline;
 }
 
+div.cell.selected, div.cell.selected.jupyter-soft-selected {
+    border-radius: 25px;
+}
+
 #notebook-container {
     border-radius: 25px;
 }
