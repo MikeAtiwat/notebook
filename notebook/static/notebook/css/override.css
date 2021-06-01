@@ -109,6 +109,9 @@ a hack to deal with our current css styles and no new styling should be added in
     display: inline;
 }
 
+#notebook-container {
+    border-radius: 25px;
+}
 
 /*#toolcell {
     margin-left: 13px;
