@@ -97,9 +97,9 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 .tc_prompt {
+    position: relative;
     height: 20px;
     padding: 0px 0.4em;
-    position: absolute;
     border-radius: 2px;
     min-width: 13ex;
     line-height: 22px;
