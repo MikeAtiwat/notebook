@@ -227,7 +227,10 @@ define([
             keyboard_manager: this.keyboard_manager,
         });
         this.completer = new completer.Completer(this, this.events);
+        var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
 
+        button_group.children[0].disabled = true;
+        button_group.children[1].disabled = true;
     };
 
     /** @method bind_events */
@@ -468,8 +471,8 @@ define([
         console.log(this.element[0].children["tool_cell"].children["insert_above_below"])
         var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
 
-        button_group.children[0].disabled = true;
-        button_group.children[1].disabled = true;
+        button_group.children[0].disabled = false;
+        button_group.children[1].disabled = false;
         // var button = this.element[0].children["tool_cell"].children["insert_above_below"];
         // button.disabled = true;
         
@@ -636,6 +639,10 @@ define([
                 this.completer.close();
             }
         }
+        var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
+
+        button_group.children[0].disabled = true;
+        button_group.children[1].disabled = true;
         return cont;
     };
 
