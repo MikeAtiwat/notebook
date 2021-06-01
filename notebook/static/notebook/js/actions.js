@@ -392,7 +392,7 @@ define([
         'insert-markdown-below' : {
             cmd: i18n.msg._('insert cell below'),
             help: i18n.msg._('insert cell below'),
-            icon : 'fa-plus',
+            icon : 'fa-message-plus',
             help_index : 'ed',
             handler : function (env) {
                 env.notebook.insert_cell_below();
