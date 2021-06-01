@@ -110,20 +110,26 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 div.cell.selected {
-    border-radius: 10px;
+    border-radius: 12px;
     /*width: 5px;*/
 }
 
 div.cell.rendered {
-    border-radius: 10px;
+    border-radius: 12px;
 }
-/*
+
 div.cell {
   overflow: hidden;
-}*/
+}
+
+
+#inner-input {
+  border-radius: 12px;
+}
+
 
 #notebook-container {
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 /*#toolcell {
