@@ -38,7 +38,8 @@ define([
     ToolCell.prototype._make = function () {
         var grps = [
           [
-            ['jupyter-notebook:insert-select-cell-below','jupyter-notebook:insert-markdown-below'],
+            [new toolbar.Button('jupyter-notebook:run-cell-and-select-next',
+                {label: i18n.msg._('Cell')}),'jupyter-notebook:insert-markdown-below'],
             'insert_above_below']
         ];
         this.construct(grps);
