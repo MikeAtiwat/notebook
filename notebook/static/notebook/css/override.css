@@ -103,15 +103,12 @@ a hack to deal with our current css styles and no new styling should be added in
     border-radius: 2px;
     min-width: 13ex;
     line-height: 22px;
-    display: inline;
+    display: inline-block;
 }
 .toolcell {
     display: inline;
 }
 
-.btn-group {
-    display: inline;
-}
 
 /*#toolcell {
     margin-left: 13px;
