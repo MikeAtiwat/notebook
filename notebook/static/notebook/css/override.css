@@ -113,6 +113,10 @@ div.cell.selected, div.cell.selected.jupyter-soft-selected {
     border-radius: 25px;
 }
 
+div.cell {
+    border-radius: 25px;
+}
+
 #notebook-container {
     border-radius: 25px;
 }
