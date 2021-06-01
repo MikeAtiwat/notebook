@@ -465,7 +465,7 @@ define([
     // Basic cell manipulation.
 
     CodeCell.prototype.select = function () {
-        console.log(this.element.children[0])
+        console.log(this.element)
         var cont = Cell.prototype.select.apply(this, arguments);
         if (cont) {
             this.code_mirror.refresh();
