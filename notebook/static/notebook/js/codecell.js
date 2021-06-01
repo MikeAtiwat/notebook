@@ -466,8 +466,12 @@ define([
 
     CodeCell.prototype.select = function () {
         console.log(this.element[0].children["tool_cell"].children["insert_above_below"])
-        var button = this.element[0].children["tool_cell"].children["insert_above_below"];
-        button.disabled = true;
+        var button_group = this.element[0].children["tool_cell"].children["insert_above_below"]
+
+        button_group.children[0].disabled = true;
+        button_group.children[0].disabled = true;
+        // var button = this.element[0].children["tool_cell"].children["insert_above_below"];
+        // button.disabled = true;
         
         var cont = Cell.prototype.select.apply(this, arguments);
         if (cont) {
