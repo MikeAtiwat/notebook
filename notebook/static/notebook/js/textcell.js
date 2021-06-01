@@ -173,8 +173,8 @@ define([
         var acts = new actions.init({notebook:this.notebook});
         this.toolbar = new toolcell.ToolCell(tc, {notebook: this.notebook, actions: acts, events: events});
 
-        inner_cell.append(input_area).append(render_area).append(tc);
-        cell.append(inner_cell);
+        inner_cell.append(input_area).append(render_area);
+        cell.append(inner_cell).append(tc);
         this.element = cell;
         this.inner_cell = inner_cell;
     };
