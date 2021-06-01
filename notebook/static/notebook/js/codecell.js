@@ -465,8 +465,8 @@ define([
     // Basic cell manipulation.
 
     CodeCell.prototype.select = function () {
-        console.log(this.element[0].children[2].children[1])
-        this.element[0].children[2].children[1].attr('disabled','disabled')
+        console.log(this.element[0].children[2].children["btn-group"])
+        
         var cont = Cell.prototype.select.apply(this, arguments);
         if (cont) {
             this.code_mirror.refresh();
