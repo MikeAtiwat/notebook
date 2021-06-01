@@ -8,7 +8,7 @@
     "codemirror": "components/codemirror#5.56.0+components1",
     "create-react-class": "https://cdn.jsdelivr.net/npm/create-react-class@15.6.3/create-react-class.min.js",
     "es6-promise": "~1.0",
-    "font-awesome": "components/font-awesome#~6.0",
+    "font-awesome": "components/font-awesome#~4.7.0",
     "google-caja": "5669",
     "jed": "~1.1.1",
     "jquery": "components/jquery#~3.5.0",
