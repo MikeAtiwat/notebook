@@ -466,7 +466,7 @@ define([
 
     CodeCell.prototype.select = function () {
         console.log(this.element[0].children["tool_cell"].children["insert_above_below"])
-        button = this.element[0].children["tool_cell"].children["insert_above_below"].children[0];
+        var button = this.element[0].children["tool_cell"].children["insert_above_below"].children[0];
         button.disabled = true;
         
         var cont = Cell.prototype.select.apply(this, arguments);
