@@ -109,12 +109,17 @@ a hack to deal with our current css styles and no new styling should be added in
     display: inline;
 }
 
-div.cell.selected, div.cell.selected.jupyter-soft-selected {
+div.cell.selected {
     border-radius: 25px;
+    width: 10px;
 }
 
 div.cell.rendered {
     border-radius: 25px;
+}
+
+div.cell {
+  overflow: hidden;
 }
 
 #notebook-container {
