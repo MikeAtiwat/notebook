@@ -35,19 +35,19 @@ a hack to deal with our current css styles and no new styling should be added in
 
 #MemBar {
   width: 1%;
-  height: 5px;
+  height: 10px;
   background-color: green;
 }
 
-#MemProgress {
+#CpuProgress {
   width: 100%;
   background-color: grey;
   /*transform: rotate(90deg);*/
 }
 
-#MemBar {
+#CpuBar {
   width: 1%;
-  height: 5px;
+  height: 10px;
   background-color: green;
 }
 
