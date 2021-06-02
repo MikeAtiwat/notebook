@@ -29,14 +29,15 @@ define([
                 $('<span>').attr('id', 'jupyter-resource-usage-mem')
                     .attr('title', 'Actively used Memory (updates every 5s)')
             )
-        );
-        $('#jupyter-resource-usage-display')
                 .append(
                     $('<strong>').text(' CPU: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-cpu')
                     .attr('title', 'Actively used CPU (updates every 5s)')
             )
+        );
+
+
 
         // FIXME: Do something cleaner to get styles in here?
         $('head').append(
