@@ -28,14 +28,16 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 #MemProgress {
-  width: 100%;
+  height: 100%;
   background-color: grey;
   /*transform: rotate(90deg);*/
+  display: flex;
+  align-items: flex-end;
 }
 
 #MemBar {
-  width: 1%;
-  height: 10px;
+  height: 1%;
+  width: 10px;
   background-color: green;
 }
 

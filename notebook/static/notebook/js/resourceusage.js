@@ -83,7 +83,7 @@ define([
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
                         var e_mem = document.getElementById("MemBar");
-                        e_mem.style.width = percent_use_mem + "%"
+                        e_mem.style.height = percent_use_mem + "%"
                         // console.log(membar.style)
                     }
                     if (limits['memory']['warn']) {
