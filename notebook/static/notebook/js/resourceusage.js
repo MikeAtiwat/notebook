@@ -70,6 +70,9 @@ define([
 
                 var limits = data['limits'];
                 var totalCpuUsage = data['cpu_percent'];
+                if (totalCpuUsage >= 100){
+                    totalCpuUsage = 100;
+                }
                 var display = totalMemoryUsage;
                 var display_cpu = totalCpuUsage;
 
