@@ -77,7 +77,7 @@ define([
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
                         console.log(percent_use_mem)
-                        membar = this.element
+                        membar = $('#memProgress')
                         console.log(membar)
                     }
                     if (limits['memory']['warn']) {
