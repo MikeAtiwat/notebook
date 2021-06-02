@@ -30,7 +30,7 @@ define([
                     .attr('title', 'Actively used Memory (updates every 5s)')
             )
                 .append(
-                    $('<div>').attr('id', 'MemProgress').append($('<div>').attr('id', 'MemBar'))
+                    $('<span>').attr('id', 'MemProgress').append($('<div>').attr('id', 'MemBar'))
                     )
                 .append(
                     $('<strong>').text(' CPU: ')
