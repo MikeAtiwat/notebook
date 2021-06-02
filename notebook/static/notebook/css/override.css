@@ -29,6 +29,7 @@ a hack to deal with our current css styles and no new styling should be added in
 
 #MemProgress {
   height: 30px;
+  width: 5px;
   background-color: grey;
 }
 
