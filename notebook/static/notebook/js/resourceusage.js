@@ -75,6 +75,8 @@ define([
                     if (limits['memory']['rss']) {
                         maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
+                        var percent_use_mem = data['rss']/limits['memory']['rss']
+                        console.log(percent_use_mem)
                     }
                     if (limits['memory']['warn']) {
                         $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
