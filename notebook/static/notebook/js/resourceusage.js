@@ -97,6 +97,11 @@ define([
                 $('#jupyter-resource-usage-cpu').text(display_cpu);
                 var e_cpu = document.getElementById("CpuBar");
                 var width_cpu = totalCpuUsage*0.25
+                if (totalCpuUsage >= 80) {
+                    e_cpu.style.backgroundColor = "red";
+                }else{
+                    e_cpu.style.backgroundColor = "green";
+                }
                 e_cpu.style.width = width_cpu + "px"
             }
         });
