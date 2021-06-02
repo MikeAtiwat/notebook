@@ -34,10 +34,10 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 #MemBar {
-  height: 1%;
-  margin-bottom: 0;
-  width: 5px;
+  width: 1%;
+  height: 30px;
   background-color: green;
+  transform: rotate(90deg);
 }
 
 /* The sidebar links */
