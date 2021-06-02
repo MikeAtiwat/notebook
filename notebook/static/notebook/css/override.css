@@ -39,6 +39,18 @@ a hack to deal with our current css styles and no new styling should be added in
   background-color: green;
 }
 
+#MemProgress {
+  width: 100%;
+  background-color: grey;
+  /*transform: rotate(90deg);*/
+}
+
+#MemBar {
+  width: 1%;
+  height: 10px;
+  background-color: green;
+}
+
 /* The sidebar links */
 .sidebar a {
   padding: 8px 8px 8px 32px;

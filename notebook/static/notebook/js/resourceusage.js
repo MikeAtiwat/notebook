@@ -38,6 +38,9 @@ define([
                 $('<span>').attr('id', 'jupyter-resource-usage-cpu')
                     .attr('title', 'Actively used CPU (updates every 5s)')
             )
+                .append(
+                    $('<div>').attr('id', 'CpuProgress').append($('<div>').attr('id', 'CpuBar'))
+                    )
         );
 
 
@@ -76,8 +79,8 @@ define([
                         maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
-                        var e1 = document.getElementById("MemBar");
-                        e1.style.width = percent_use_mem + "%"
+                        var e_mem = document.getElementById("MemBar");
+                        e_mem.style.width = percent_use_mem + "%"
                         // console.log(membar.style)
                     }
                     if (limits['memory']['warn']) {
@@ -89,6 +92,8 @@ define([
 
                 $('#jupyter-resource-usage-mem').text(display);
                 $('#jupyter-resource-usage-cpu').text(display_cpu);
+                var e_cpu = document.getElementById("CpuBar");
+                e_cpu.style.width = totalCpuUsage + "%"
             }
         });
     };
