@@ -28,13 +28,13 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 #MemProgress {
-  height: 30px;
-  width: 5px;
+  width: 100%;
   background-color: grey;
+  transform: rotate(90deg);
 }
 
 #MemBar {
-  height: 10px;
+  height: 1%;
   margin-bottom: 0;
   width: 5px;
   background-color: green;
