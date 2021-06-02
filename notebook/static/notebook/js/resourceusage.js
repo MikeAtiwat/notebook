@@ -32,7 +32,7 @@ define([
         );
         $('#jupyter-resource-usage-display')
                 .append(
-                    $('<strong>').text('CPU: ')
+                    $('<strong>').text(' CPU: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-cpu')
                     .attr('title', 'Actively used CPU (updates every 5s)')
