@@ -81,7 +81,7 @@ define([
                     if (limits['memory']['rss']) {
                         maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
-                        var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
+                        var percent_use_mem = (data['rss']/limits['memory']['rss'])*25
                         var e_mem = document.getElementById("MemBar");
                         e_mem.style.width = percent_use_mem + "%"
                         // console.log(membar.style)
@@ -96,7 +96,8 @@ define([
                 $('#jupyter-resource-usage-mem').text(display);
                 $('#jupyter-resource-usage-cpu').text(display_cpu);
                 var e_cpu = document.getElementById("CpuBar");
-                e_cpu.style.width = totalCpuUsage + "%"
+                var width_cpu = totalCpuUsage*0.25
+                e_cpu.style.width = width_cpu + "%"
             }
         });
     };

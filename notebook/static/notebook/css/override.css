@@ -28,10 +28,10 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 #MemProgress {
-  width: 100%;
+  width: 25px;
   background-color: grey;
-  display: inline;
-  /*transform: rotate(90deg);*/
+  transform: rotate(-90deg);
+  display: inline-block;
 }
 
 #MemBar {
@@ -41,9 +41,10 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 #CpuProgress {
-  width: 100%;
+  width: 25px;
   background-color: grey;
-  /*transform: rotate(90deg);*/
+  transform: rotate(-90deg);
+  display: inline-block;
 }
 
 #CpuBar {
