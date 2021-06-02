@@ -37,7 +37,6 @@ a hack to deal with our current css styles and no new styling should be added in
   width: 1%;
   height: 30px;
   background-color: green;
-  transform: rotate(90deg);
 }
 
 /* The sidebar links */
