@@ -77,7 +77,8 @@ define([
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
                         console.log(percent_use_mem)
-                        $('#MemBar').style("width",percent_use_mem)
+                        membar = this.element
+                        console.log(membar)
                     }
                     if (limits['memory']['warn']) {
                         $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
