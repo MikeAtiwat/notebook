@@ -30,13 +30,15 @@ define([
                     .attr('title', 'Actively used Memory (updates every 5s)')
             )
                 .append(
+                    $('<div>').attr('id', 'MemProgress').append($('<div>').attr('id', 'MemBar'))
+                    )
+                .append(
                     $('<strong>').text(' CPU: ')
                 ).append(
                 $('<span>').attr('id', 'jupyter-resource-usage-cpu')
                     .attr('title', 'Actively used CPU (updates every 5s)')
             )
         );
-
 
 
         // FIXME: Do something cleaner to get styles in here?

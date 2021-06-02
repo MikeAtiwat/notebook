@@ -27,6 +27,17 @@ a hack to deal with our current css styles and no new styling should be added in
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
+#MemProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#MemBar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
 /* The sidebar links */
 .sidebar a {
   padding: 8px 8px 8px 32px;
