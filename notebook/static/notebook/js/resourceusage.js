@@ -31,8 +31,6 @@ define([
             )
         );
         $('#jupyter-resource-usage-display')
-                .addClass('btn-group')
-                .addClass('pull-right')
                 .append(
                     $('<strong>').text('CPU: ')
                 ).append(
