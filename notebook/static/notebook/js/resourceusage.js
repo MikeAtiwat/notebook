@@ -78,7 +78,7 @@ define([
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
                         console.log(percent_use_mem)
                         membar = $('#memProgress')
-                        console.log(membar.style.width)
+                        console.log(membar.style)
                     }
                     if (limits['memory']['warn']) {
                         $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
