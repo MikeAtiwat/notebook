@@ -76,8 +76,8 @@ define([
                         maxMemoryUsage = humanFileSize(limits['memory']['rss']);
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
-                        console.log(percent_use_mem)
-                        $('#memProgress').attr("width", percent_use_mem)
+                        var e1 = document.getElementById("MemBar");
+                        e1.style.width = "20%"
                         // console.log(membar.style)
                     }
                     if (limits['memory']['warn']) {
