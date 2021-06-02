@@ -83,7 +83,7 @@ define([
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*25
                         var e_mem = document.getElementById("MemBar");
-                        e_mem.style.width = percent_use_mem + "%"
+                        e_mem.style.width = percent_use_mem + "px"
                         // console.log(membar.style)
                     }
                     if (limits['memory']['warn']) {
@@ -97,7 +97,7 @@ define([
                 $('#jupyter-resource-usage-cpu').text(display_cpu);
                 var e_cpu = document.getElementById("CpuBar");
                 var width_cpu = totalCpuUsage*0.25
-                e_cpu.style.width = width_cpu + "%"
+                e_cpu.style.width = width_cpu + "px"
             }
         });
     };
