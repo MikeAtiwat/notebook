@@ -7,7 +7,7 @@ define([
         setupDOM();
         displayMetrics();
         // Update every five seconds, eh?
-        setInterval(displayMetrics, 1000 * 5);
+        setInterval(displayMetrics, 1000 * 2);
 
         document.addEventListener("visibilitychange", function () {
             // Update instantly when user activates notebook tab
@@ -77,6 +77,7 @@ define([
                         display += " / " + maxMemoryUsage
                         var percent_use_mem = (data['rss']/limits['memory']['rss'])*100
                         console.log(percent_use_mem)
+                        $('#MemBar').style("width",percent_use_mem)
                     }
                     if (limits['memory']['warn']) {
                         $('#jupyter-resource-usage-display').addClass('jupyter-resource-usage-warn');
