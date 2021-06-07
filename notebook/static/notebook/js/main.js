@@ -93,7 +93,7 @@ requirejs([
     ) {
     "use strict";
 
-    // // Pull typeahead from the global jquery object
+    // Pull typeahead from the global jquery object
     // var typeahead = $.typeahead;
     
     // try{
@@ -122,9 +122,9 @@ requirejs([
     // var common_config = new configmod.ConfigSection('common', common_options);
     // common_config.load();
 
-    // // Instantiate the main objects
+    // Instantiate the main objects
     
-    // var page = new page.Page('div#header', 'div#site');
+    var page = new page.Page('div#header', 'div#site');
     // var pager = new pager.Pager('div#pager', {
     //     events: events});
     // pager.expand();
