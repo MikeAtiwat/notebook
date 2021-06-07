@@ -85,93 +85,93 @@ requirejs([
 
     page = new page.Page('div#header', 'div#site');
 
-    var session_list = new sesssionlist.SesssionList($.extend({
-        events: events},
-        common_options));
-        var contents = new contents_service.Contents({
-            base_url: common_options.base_url,
-            common_config: common_config
-        });
+    // var session_list = new sesssionlist.SesssionList($.extend({
+    //     events: events},
+    //     common_options));
+    //     var contents = new contents_service.Contents({
+    //         base_url: common_options.base_url,
+    //         common_config: common_config
+    //     });
         
-    IPython.NotebookList = notebooklist.NotebookList;
-    var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
-        contents: contents,
-        session_list:  session_list},
-        common_options));
-    var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
-        session_list:  session_list},
-        common_options));
+    // IPython.NotebookList = notebooklist.NotebookList;
+    // var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
+    //     contents: contents,
+    //     session_list:  session_list},
+    //     common_options));
+    // var kernel_list = new kernellist.KernelList('#running_list',  $.extend({
+    //     session_list:  session_list},
+    //     common_options));
     
-    var terminal_list;
-    if (utils.get_body_data("terminalsAvailable") === "True") {
-        terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
-    }
+    // var terminal_list;
+    // if (utils.get_body_data("terminalsAvailable") === "True") {
+    //     terminal_list = new terminallist.TerminalList('#terminal_list', common_options);
+    // }
 
-    var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
+    // var login_widget = new loginwidget.LoginWidget('#login_widget', common_options);
 
-    var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
-        $.extend(
-            {contents: contents, events: events},
-            common_options
-        )
-    );
+    // var new_buttons = new newnotebook.NewNotebookWidget("#new-buttons",
+    //     $.extend(
+    //         {contents: contents, events: events},
+    //         common_options
+    //     )
+    // );
 
-    var interval_id=0;
-    // auto refresh every xx secondes, no need to be fast,
-    //  update is done most of the time when page get focus
-    IPython.tree_time_refresh = 60; // in sec
+    // var interval_id=0;
+    // // auto refresh every xx secondes, no need to be fast,
+    // //  update is done most of the time when page get focus
+    // IPython.tree_time_refresh = 60; // in sec
 
-    // limit refresh on focus at 1/10sec, otherwise this
-    // can cause too frequent refresh on switching through windows or tabs.
-    IPython.min_delta_refresh = 10; // in sec
+    // // limit refresh on focus at 1/10sec, otherwise this
+    // // can cause too frequent refresh on switching through windows or tabs.
+    // IPython.min_delta_refresh = 10; // in sec
 
-    var _last_refresh = null;
+    // var _last_refresh = null;
 
-    var _refresh_list = function(){
-        _last_refresh = new Date();
-        session_list.load_sessions();
-        if (terminal_list) {
-            terminal_list.load_terminals();
-        }
-    };
+    // var _refresh_list = function(){
+    //     _last_refresh = new Date();
+    //     session_list.load_sessions();
+    //     if (terminal_list) {
+    //         terminal_list.load_terminals();
+    //     }
+    // };
 
-    var enable_autorefresh = function(){
-        /**
-         *refresh immediately , then start interval
-         */
-        var now = new Date();
+    // var enable_autorefresh = function(){
+    //     /**
+    //      *refresh immediately , then start interval
+    //      */
+    //     var now = new Date();
 
-        if (now - _last_refresh < IPython.min_delta_refresh*1000){
-            console.log("Reenabling autorefresh too close to last tree refresh, not refreshing immediately again.");
-        } else {
-            _refresh_list();
-        }
-        if (!interval_id){
-            interval_id = setInterval(_refresh_list,
-                    IPython.tree_time_refresh*1000
-            );
-        }
-    };
+    //     if (now - _last_refresh < IPython.min_delta_refresh*1000){
+    //         console.log("Reenabling autorefresh too close to last tree refresh, not refreshing immediately again.");
+    //     } else {
+    //         _refresh_list();
+    //     }
+    //     if (!interval_id){
+    //         interval_id = setInterval(_refresh_list,
+    //                 IPython.tree_time_refresh*1000
+    //         );
+    //     }
+    // };
 
-    var disable_autorefresh = function(){
-        clearInterval(interval_id);
-        interval_id = 0;
-    };
+    // var disable_autorefresh = function(){
+    //     clearInterval(interval_id);
+    //     interval_id = 0;
+    // };
 
-    // stop autorefresh when page lose focus
-    $(window).blur(function() {
-        disable_autorefresh();
-    });
+    // // stop autorefresh when page lose focus
+    // $(window).blur(function() {
+    //     disable_autorefresh();
+    // });
 
-    //re-enable when page get focus back
-    $(window).focus(function() {
-        enable_autorefresh();
-    });
+    // //re-enable when page get focus back
+    // $(window).focus(function() {
+    //     enable_autorefresh();
+    // });
 
-    // // finally start it, it will refresh immediately
-    enable_autorefresh();
+    // // // finally start it, it will refresh immediately
+    // enable_autorefresh();
 
-    // page.show();
+    page.show();
 
     // // For backwards compatibility.
     // IPython.page = page;
