@@ -493,7 +493,7 @@ define([
             span12.empty();
             span12.append($('<div style="margin:auto;text-align:center;color:grey"/>').text(message));
         }
-        var path = this.notebook_path + "/";
+        var path = this.notebook_path + "/../";
         console.log(path)
         var offset = n_uploads;
         if (path !== '') {
