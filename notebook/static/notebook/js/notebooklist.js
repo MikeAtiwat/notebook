@@ -412,7 +412,6 @@ define([
         );
         breadcrumb.append(root);
         var path_parts = [];
-        console.log(this.notebook_path)
         this.notebook_path.split('/').forEach(function(path_part) {
             path_parts.push(path_part);
             var path = path_parts.join('/');
@@ -453,6 +452,7 @@ define([
 
     NotebookList.prototype.update_location = function (path) {
         this.notebook_path = path;
+        console.log(path)
         $('body').attr('data-notebook-path', path);
         // Update the file tree list without reloading the page
         this.load_list();
