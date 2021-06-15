@@ -122,9 +122,7 @@ define([
         this.sessions = {};
         this.base_url = options.base_url || utils.get_body_data("baseUrl");
         this.notebook_path = options.notebook_path || utils.get_body_data("notebookPath");
-        console.log(this.notebook_path)
         this.initial_notebook_path = this.notebook_path;
-        console.log(this.initial_notebook_path)
         this.contents = options.contents;
         if (this.session_list && this.session_list.events) {
             this.session_list.events.on('sessions_loaded.Dashboard',

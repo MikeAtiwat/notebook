@@ -165,7 +165,8 @@ requirejs([
     var notebook_list = new notebooklist.NotebookList('#notebook_list', $.extend({
         contents: contents,
         session_list:  session_list},
-        common_options));
+        common_options
+        ));
 
     var login_widget = new loginwidget.LoginWidget('span#login_widget', common_options);
     var toolbar = new maintoolbar.MainToolBar('#maintoolbar-container', {
