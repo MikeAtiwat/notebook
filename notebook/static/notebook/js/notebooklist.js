@@ -122,7 +122,8 @@ define([
         this.sessions = {};
         this.base_url = options.base_url || utils.get_body_data("baseUrl");
         // this.notebook_path = options.notebook_path || utils.get_body_data("notebookPath");
-        this.notebook_path = "/"
+        var path_a = options.notebook_path || utils.get_body_data("notebookPath");
+        this.notebook_path = path_a + "/../"
         this.initial_notebook_path = "this.notebook_path";
         this.contents = options.contents;
         if (this.session_list && this.session_list.events) {
