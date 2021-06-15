@@ -375,6 +375,7 @@ define([
 
     NotebookList.prototype.load_list = function () {
         var that = this;
+        console.log("HAAHAHAHA")
         // Add an event handler browser back and forward events
         window.onpopstate = function(e) {
             var path = (window.history.state && window.history.state.path) ?
@@ -450,7 +451,6 @@ define([
 
     NotebookList.prototype.update_location = function (path) {
         this.notebook_path = path;
-        console.log(path)
         $('body').attr('data-notebook-path', path);
         // Update the file tree list without reloading the page
         this.load_list();
