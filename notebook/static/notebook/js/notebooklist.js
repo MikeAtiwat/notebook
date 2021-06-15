@@ -379,6 +379,7 @@ define([
         window.onpopstate = function(e) {
             var path = (window.history.state && window.history.state.path) ?
                     window.history.state.path : that.initial_notebook_path;
+            console.log(path)
             that.update_location(path);
         };
         var breadcrumb = $('.breadcrumb');
