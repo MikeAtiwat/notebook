@@ -122,7 +122,7 @@ define([
         this.sessions = {};
         this.base_url = options.base_url || utils.get_body_data("baseUrl");
         this.notebook_path = options.notebook_path || utils.get_body_data("notebookPath");
-        this.initial_notebook_path = this.notebook_path;
+        this.initial_notebook_path = this.notebook_path + /../;
         this.contents = options.contents;
         if (this.session_list && this.session_list.events) {
             this.session_list.events.on('sessions_loaded.Dashboard',
@@ -493,8 +493,7 @@ define([
             span12.empty();
             span12.append($('<div style="margin:auto;text-align:center;color:grey"/>').text(message));
         }
-        var path = this.notebook_path + "/../";
-        console.log(path)
+        var path = this.notebook_path;
         var offset = n_uploads;
         if (path !== '') {
             item = this.new_item(offset, false);
