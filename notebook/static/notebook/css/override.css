@@ -83,6 +83,10 @@ a hack to deal with our current css styles and no new styling should be added in
   font-family: 'NotoSansThai' , 'notosansThai-Medium', sans-serif;
 }
 
+.navbar-nav {
+  color:white;
+}
+
 .nav {
   color: white;
 }
