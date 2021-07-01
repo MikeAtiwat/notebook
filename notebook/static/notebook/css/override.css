@@ -168,8 +168,8 @@ div.cell {
   border-radius: 12px;
 }
 
-#dropdown {
-  color: white;
+.navbar-default .navbar-nav > li > a {
+    color: white;
 }
 
 #notebook-container {
