@@ -80,7 +80,11 @@ a hack to deal with our current css styles and no new styling should be added in
 .navbar-collapse {
   background-color: orange;
   color: white;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Lato", sans-serif;
+}
+
+.nav {
+  color: white;
 }
 /* The button used to open the sidebar */
 .openbtn {
