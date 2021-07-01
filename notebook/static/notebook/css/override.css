@@ -78,9 +78,9 @@ a hack to deal with our current css styles and no new styling should be added in
 }
 
 .navbar-collapse {
-  background-color: orange;
+  background-color: #f47302;
   color: white;
-  font-family: "Lato", sans-serif;
+  font-family: 'NotoSansThai' , 'notosansThai-Medium', sans-serif;
 }
 
 .nav {
