@@ -79,6 +79,7 @@ a hack to deal with our current css styles and no new styling should be added in
 
 .navbar-collapse {
   background-color: orange;
+  color: white;
 }
 /* The button used to open the sidebar */
 .openbtn {
