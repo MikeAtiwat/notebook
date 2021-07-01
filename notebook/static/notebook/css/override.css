@@ -76,6 +76,10 @@ a hack to deal with our current css styles and no new styling should be added in
   font-size: 36px;
   margin-left: 50px;
 }
+
+.navbar-collapse {
+  background-color: orange;
+}
 /* The button used to open the sidebar */
 .openbtn {
   float: right;
