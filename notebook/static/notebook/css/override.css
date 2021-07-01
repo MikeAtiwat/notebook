@@ -154,6 +154,10 @@ div.cell {
   border-radius: 12px;
 }
 
+div.menubar-container{
+  background-color: orange;
+}
+
 
 #notebook-container {
     border-radius: 12px;
