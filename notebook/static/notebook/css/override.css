@@ -152,11 +152,9 @@ div.cell {
 
 #inner-cell {
   border-radius: 12px;
+  background-color: orange;
 }
 
-.menubar-container{
-  background-color: red;
-}
 
 
 #notebook-container {
