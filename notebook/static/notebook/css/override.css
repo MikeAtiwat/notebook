@@ -168,7 +168,9 @@ div.cell {
   border-radius: 12px;
 }
 
-
+#dropdown {
+  color: white;
+}
 
 #notebook-container {
     border-radius: 12px;
